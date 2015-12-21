@@ -124,3 +124,6 @@ sympy-plots-for-*.tex/
 # WinEdt
 *.bak
 *.sav
+
+#Temporary Folders
+SIG Proceedings Template-Jan2015 Zip/
