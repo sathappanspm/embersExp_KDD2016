@@ -76,37 +76,50 @@ alerts for Brazil June 2013.}
 EMBERS captured some of the first `calls to protest` for the trigger city of
 San Cristobal and its nearby surrounding areas and correctly forecast the
 population (Education) and that the protests would turn violent. Over the next
-days, EMBERS closely forecast the spike in the number of events and the spread
-of the protests to additional cities.
-   
+days, EMBERS closely forecast the spike in the number of events as shown
+in Figure.~\ref{fig:venezuelaMarch14} and the spread
+of the protests to additional cities as shown in
+Figure.~\ref{fig:venezuelaMap}.
+
 \begin{figure}[H]
 \includegraphics[width=.8\columnwidth]{cu/venezuelaFeb14}
 \caption{Venezuelan Spring}
 \label{fig:venezuelaMarch14}
 \end{figure}
 
+\begin{figure}[H]
+\includegraphics[width=.6\columnwidth]{cu/venezuelaMap}
+\caption{Venezuelan Spring}
+\label{fig:venezuelaMap}
+\end{figure}
+
+
+
 \textbf{Mexico Protests (October 2014)}:
-EMBERS forecast an uptick of Mexico protests during early October 2014 stemming
-from students and teachers demanding action on the 43 students missing
-case, with a lead time of about 3
+EMBERS , as shown in Figure.~\ref{fig:mexicoOct14} forecast an uptick of Mexico
+protests during early October 2014 stemming from students and teachers demanding
+action on the 43 students missing case, with a lead time of about 3
 days. It also generated  a series of alert spikes coinciding with the first
 large-scale nationwide protests between October 5th to 8th.
 
-\sathap{An example of where EMBERS missed}
-However EMBERS missed the huge single day spikes on December 1st when
-people turned out in huge numbers in different parts of Mexico demanding
-Pena Nieto`s ouster and on Jan 26th, when several rallies where
-organized to mark 4months since the dissapearance of the 43 students.
 \begin{figure}[H]
 \includegraphics[width=.8\columnwidth]{cu/mexicoOct14}
 \caption{Mexico Protests}
 \label{fig:mexicoOct14}
 \end{figure}
 
+Figure.~\ref{fig:mexicoTimeline} provides a timeline of GSR events and
+EMBERS alerts for Mexico during this period
+\begin{figure}[H]
+\includegraphics[width=.8\columnwidth]{cu/mx_timeline}
+\caption{Mexico Protests}
+\label{fig:mexicoTimeline}
+\end{figure}
+
 \textbf{Colombia Protests (December'14 -March'15)}:
 EMBERS successfully forecast the uptick in the number of events during the
 middle of December 2014 and also the increase in protest counts during February
-2015, though in the latter case EMBERS over predicted the counts. The uptick in
+2015 as shown in Figure.~\ref{fig:colombiaDec14}, though in the latter case EMBERS over predicted the counts. The uptick in
 December 2014 was led by the opposition leader Alvaro Uribe against impunity.
 Whereas the increase in  protest counts in February 2015
 was due to trucker’s strike against increase in fuel price.
@@ -119,7 +132,7 @@ was due to trucker’s strike against increase in fuel price.
 
 \textbf{Paraguay Protests (February 2015)}:
 EMBERS forecast the uptick in number of protest events in Paraguay during mid
-February 2015. The events were mainly due to the lack of opportunity and basic
+February 2015 as shown in Figure.~\ref{fig:paraguay15}. The events were mainly due to the lack of opportunity and basic
 needs and against the introduction of new public-private partnership law.
 
 \begin{figure}[H]
@@ -150,10 +163,6 @@ were not sufficient and this affected the recall of one of our main
 models for Brazil - Planned Protest - as it depended on the quality and recall of
 date extraction from text.
 
-
-\sathap{Brazil 2015 is also an example of where EMBERS missed
-capturing the peak}
-
 \begin{figure}[H]
 \includegraphics[width=.8\columnwidth]{cu/brazilMarch15}
 \caption{Brazil 2015 Protests}
@@ -162,3 +171,15 @@ capturing the peak}
 
 
 \textbf{Mexico December 1, 2014 Protests}:
+EMBERS missed the huge single day spike on December 1st when
+people turned out in huge numbers in different parts of Mexico demanding
+Pena Nieto`s ouster.
+EMBERS predicted nationwide events for December 1st but failed to
+capture the its spread. December 1st was picked by the protestors due to
+its historical significance - it was the day when Pena Nieto was sworn
+in as President in 2012 amidst much controversy and opposition from
+general public. Also another reason could be EMBERS inability in
+extracting dates  like "\#1Dmx" mentioned by the twitterati.
+
+
+

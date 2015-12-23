@@ -56,6 +56,7 @@
 \graphicspath{{./figures/}}
 \usepackage{color}
 \usepackage[utf8]{inputenc}
+\usepackage{authblk}
 \DeclareUnicodeCharacter{00A0}{ }
 
 \newcommand{\sathap}[1]{[{\color{magenta}\textit{Sathappan}\textit{: #1}}]}
@@ -132,65 +133,106 @@ Open Source Indicators Forecasting System}
 \numberofauthors{1} %  in this sample file, there are a *total*
 % of EIGHT authors. SIX appear on the 'first-page' (for formatting
 % reasons) and the remaining two appear in the \additionalauthors section.
-%
-\author{
-% You can go ahead and credit any number of authors here,
-% e.g. one 'row of three' or two rows (consisting of one row of three
-% and a second row of one, two or three).
-%
-% The command \alignauthor (no curly braces needed) should
-% precede each author name, affiliation/snail-mail address and
-% e-mail address. Additionally, tag each line of
-% affiliation/address with \affaddr, and tag the
-% e-mail address with \email.
-%
-%\alignauthor
-%\affaddr{Author List TBD} \\  %\titlenote{Dr.~Trovato insisted his name be first.}\\
-%      \affaddr{Somwhere, Sometime}
-%      \email{some1@somewhere.edu}
-% uncommenting the triple comments will give you a rough approx of an author
-% list
-\alignauthor
- %\titlenote
-  Sathappan Muthiah\footnotemark[1],
-  Patrick Butler\footnotemark[1],
-  Rupinder Khandpur\footnotemark[1],\\
-  Prithwish Chakraborty\footnotemark[1],
-  Saurav Ghosh\footnotemark[1],
-  Parang Saraf\footnotemark[1],
-  Nathan Self\footnotemark[1], 
-  Liang Zhao\footnotemark[1],\\
-  Jose Cadena\footnotemark[9],
-  Theodoros Rekatsinas\footnotemark[10],
-  Chang-Tien Lu\footnotemark[1],
-  Elaine O. Nsoesie\footnotemark[11],
-  John S. Brownstein\footnotemark[11],
-  Sumiko R Mekaru\footnotemark[11],
-  Bert Huang\footnotemark[9],
-  Anil Vullikanti\footnotemark[9],\\
-  Achla Marathe\footnotemark[9],
-  Madhav Marathe\footnotemark[9],
-  Lise Getoor\footnotemark[3],
-  Kristen Summers\footnotemark[8],
-  Graham Katz\footnotemark[4], \\
-  Andy Doyle\footnotemark[4],
-  Jaime Arredondo\footnotemark[6],
-  Dipak Gupta\footnotemark[7],
-  David Mares\footnotemark[6],
-  Naren Ramakrishnan\footnotemark[1],
+
+  \author[1]Sathappan Muthiah,
+  \author[1]Patrick Butler,
+  \author[1]Rupinder Khandpur,\\
+  \author[1]Prithwish Chakraborty,
+  \author[1]Saurav Ghosh,
+  \author[1]Parang Saraf,
+  \author[1]Nathan Self, 
+  \author[1]Liang Zhao,\\
+  \author[9]Jose Cadena,
+  \author[10]Theodoros Rekatsinas,
+  \author[1]Chang-Tien Lu,
+  \author[11]Elaine O. Nsoesie,
+  \author[11]John S. Brownstein,
+  \author[11]Sumiko R Mekaru,
+  \author[9]Bert Huang,
+  \author[9]Anil Vullikanti,\\
+  \author[9]Achla Marathe,
+  \author[9]Madhav Marathe,
+  \author[3]Lise Getoor,
+  \author[8]Kristen Summers,
+  \author[4]Graham Katz, \\
+  \author[4]Andy Doyle,
+  \author[6]Jaime Arredondo,
+  \author[7]Dipak Gupta,
+  \author[6]David Mares,
+  \author[1]Naren Ramakrishnan,
 \\
-\affaddr{\footnotemark[1]~~Virginia Tech, 900 N.Glebe Rd., Arlington, VA 22207}\\
-\affaddr{\footnotemark[9]~~Virginia Tech, Blacksburg, VA 24060}\\
-\affaddr{\footnotemark[2]~~University of Maryland, College Park, MD 20742}\\
-\affaddr{\footnotemark[3]~~University of California at Santa Cruz, Santa Cruz, CA 95064}\\
-\affaddr{\footnotemark[8]~~~\sathap{IBM Inc.}}\\
-\affaddr{\footnotemark[6]~~University of California at San Diego, San Diego, CA 92093}\\
-\affaddr{\footnotemark[7]~~~San Diego State University, San Diego, CA 92182} \\
-\affaddr{\footnotemark[5]~~BASIS Technology, Herndon, VA 20171}\\
-\affaddr{\footnotemark[4]~~CACI Inc., Lanham, MD 20706}\\
-\affaddr{\footnotemark[10]~~Stanford University, Stanford, CA 94305}\\
-\affaddr{\footnotemark[11]~~\sathap{TBD}}\\
-}
+\affil[1]{~~Virginia Tech, 900 N.Glebe Rd., Arlington, VA 22207}\\
+\affil[9]{~~Virginia Tech, Blacksburg, VA 24060}\\
+\affil[2]{~~University of Maryland, College Park, MD 20742}\\
+\affil[3]{~~University of California at Santa Cruz, Santa Cruz, CA 95064}\\
+\affil[8]{~~~\sathap{IBM Inc.}}\\
+\affil[6]{~~University of California at San Diego, San Diego, CA 92093}\\
+\affil[7]{~~~San Diego State University, San Diego, CA 92182} \\
+\affil[5]{~~BASIS Technology, Herndon, VA 20171}\\
+\affil[4]{~~CACI Inc., Lanham, MD 20706}\\
+\affil[10]{~~Stanford University, Stanford, CA 94305}\\
+\affil[11]{~~\sathap{TBD}}\\
+
+\renewcommand\Authands{ and }
+
+%\author{
+%% You can go ahead and credit any number of authors here,
+%% e.g. one 'row of three' or two rows (consisting of one row of three
+%% and a second row of one, two or three).
+%%
+%% The command \alignauthor (no curly braces needed) should
+%% precede each author name, affiliation/snail-mail address and
+%% e-mail address. Additionally, tag each line of
+%% affiliation/address with \affaddr, and tag the
+%% e-mail address with \email.
+%%
+%%\alignauthor
+%%\affaddr{Author List TBD} \\  %\titlenote{Dr.~Trovato insisted his name be first.}\\
+%%      \affaddr{Somwhere, Sometime}
+%%      \email{some1@somewhere.edu}
+%% uncommenting the triple comments will give you a rough approx of an author
+%% list
+%\alignauthor
+% %\titlenote
+%  Sathappan Muthiah\footnotemark[1],
+%  Patrick Butler\footnotemark[1],
+%  Rupinder Khandpur\footnotemark[1],\\
+%  Prithwish Chakraborty\footnotemark[1],
+%  Saurav Ghosh\footnotemark[1],
+%  Parang Saraf\footnotemark[1],
+%  Nathan Self\footnotemark[1], 
+%  Liang Zhao\footnotemark[1],\\
+%  Jose Cadena\footnotemark[9],
+%  Theodoros Rekatsinas\footnotemark[10],
+%  Chang-Tien Lu\footnotemark[1],
+%  Elaine O. Nsoesie\footnotemark[11],
+%  John S. Brownstein\footnotemark[11],
+%  Sumiko R Mekaru\footnotemark[11],
+%  Bert Huang\footnotemark[9],
+%  Anil Vullikanti\footnotemark[9],\\
+%  Achla Marathe\footnotemark[9],
+%  Madhav Marathe\footnotemark[9],
+%  Lise Getoor\footnotemark[3],
+%  Kristen Summers\footnotemark[8],
+%  Graham Katz\footnotemark[4], \\
+%  Andy Doyle\footnotemark[4],
+%  Jaime Arredondo\footnotemark[6],
+%  Dipak Gupta\footnotemark[7],
+%  David Mares\footnotemark[6],
+%  Naren Ramakrishnan\footnotemark[1],
+%\\
+%\affaddr{\footnotemark[1]~~Virginia Tech, 900 N.Glebe Rd., Arlington, VA 22207}\\
+%\affaddr{\footnotemark[9]~~Virginia Tech, Blacksburg, VA 24060}\\
+%\affaddr{\footnotemark[2]~~University of Maryland, College Park, MD 20742}\\
+%\affaddr{\footnotemark[3]~~University of California at Santa Cruz, Santa Cruz, CA 95064}\\
+%\affaddr{\footnotemark[8]~~~\sathap{IBM Inc.}}\\
+%\affaddr{\footnotemark[6]~~University of California at San Diego, San Diego, CA 92093}\\
+%\affaddr{\footnotemark[7]~~~San Diego State University, San Diego, CA 92182} \\
+%\affaddr{\footnotemark[5]~~BASIS Technology, Herndon, VA 20171}\\
+%\affaddr{\footnotemark[4]~~CACI Inc., Lanham, MD 20706}\\
+%\affaddr{\footnotemark[10]~~Stanford University, Stanford, CA 94305}\\
+%\affaddr{\footnotemark[11]~~\sathap{TBD}}\\
+%}
 \maketitle
 \begin{abstract}
 This paper gives an account of the successful forecasts made by the
