@@ -1,9 +1,12 @@
 \section{Rare Disease Forecasting}
 
+One of the key event classes studied in EMBERS included forecasting outbreaks of four rare diseases (hantaviurs, cholera, yellow fever and machupo) in 10 countries of Latin America. The rare disease model employed a corpus of publicly available health-related news articles from HealthMap (cite) to extract topics about the mentioned rare diseases and their corresponding spatio-temporal patterns. The spatial and temporal distributions of each rare diseas topics were then utilized by 1-class SVM (cite) as features to predict the emergence of a rare outbreak at a future time point. This prediction is done for each individual source where source refers to the publisher of the news articles, e.g. "www.biobiochile.cl" a prominent source reporting disease outbreak news in Chile. We had 798 different news sources extracted from the HealthMap corpus. To combine the predictions of multiple news sources, we used a multiplicative weights algorithm (cite).
+
+
 \subsubsection{Successful forecasts}
 
-One of the key event classes studied in EMBERS included forecasting outbreaks of four rare diseases (Hantaviurs, Cholera, Yellow Fever and Machupo) in 10 countries of Latin America. The rare disease model employed a corpus of publicly available health-related news articles from HealthMap (cite) to extract topics about the mentioned rare diseases and their corresponding spatio-temporal patterns. The spatial and temporal distributions of each rare diseas e
+EMBERS rare disease model successfully forecasted the hantavirus outbreaks in Chile and Argentina (2013 and 2014).
 
 \subsubsection{Failures}
 
-some examples here
+EMBERS rare disease model failed to forecast the cholera outbreak in Mexico during the month of October, 2013. One of the possible reasons is that this cholera outbreak spread to Mexico from its neighboring country Cuba, thus there was no prior signal about this outbreak in the HealthMap corpus. Alternative data sources, such as travel patterns could have helped us in forecasting this outbreak.
