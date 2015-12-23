@@ -2,17 +2,75 @@
 \section{Civilunrest Forecasting}
 The following section gives some case studies of EMBERS forecasts over
 the past few years in Latin America.
-\textbf{Brazil Spring (June 2013)}:
-EMBERS, while missing the initial uptick, captured the increase in the order of
-magnitude of the protest events during the Brazilian Spring and also captured
+
+\subsection{Successful Forecasts}:
+The following section gives some examples of successful civilunrest
+forecasts by the EMBERS system during 2013-2015.
+
+\textbf{Brazil Spring (June 2013)}: These protests were the largest and most
+significant protests in Brazil`s recent history that caught worldwide
+attention. Millions of Brazilians took part in these demonstrations,
+also known as the Brazilian Spring or the Vinegar Movement (inspired
+from the use of vinegar soaked cloth by demonstrators to protect
+themselves from police teargas), which were catalyzed by an increase in
+public transport fares from R$3 to R$3.20 by the government of President
+Dilma Rousseff.
+
+As shown in Figure.~\ref{fig:brazilJune13} EMBERS, while missing the initial uptick,
+captured the increase in the order of magnitude of the protest events
+during the Brazilian Spring and also captured
 the spatial spread in the events, in addition to forecasting that this would be
 a "General Population" protest.
+
 \begin{figure}[H]
 \includegraphics[width=.8\columnwidth]{cu/brazilJune13}
 \caption{Brazil Spring}
 \label{fig:brazilJune13}
 \end{figure}
 
+Around 68\% of EMBERS Brazil alerts resulted from detected planned
+protest which can be explained from the fact that the social networking
+sites (Twitter and Facebook) and conventional news media played a key
+role in organization of these uprisings. Although, initial protests were
+mostly against the bus fare increase soon these grew from general
+population's deep dissatisfactions to include wider issues such as -
+government corruption, over-spending and police brutality. Also,
+demonstrators made calls for political reforms. In response, President
+Rousseff proposed a referendum on widespread political reforms in
+Brazil, but was later abandoned. EMBERS models were able to capture such
+discussions on Twitter (see Figure.~\ref{fig:brazilJune13_wordCloud}), and followed these stories as
+they evolved through June.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=.8\columnwidth]{cu/brazilJune13_wordCloud}
+\caption{Word cloud from data extracted by EMBERS models}
+\label{fig:brazilJune13_wordCloud}
+\end{figure}
+
+The protests intensified in late June (see Figure.~\ref{fig:brazilJune13}), which were
+captured by EMBERS, as they also coincided with FIFA 2013 Confederations
+Cup matches. This was an important factor due to which protests gained
+momentum as they were covered by world media. Majority of protests
+occurred in those cities, which were hosting (FIFA) soccer matches.
+EMBERS submitted most of its alerts for these host cities (see Figure
+~\ref{fig:brazilJune13_map}){\textemdash} Rio de Janeiro, São Paulo,
+Belo Horizonte, Salvador and Porto Alegre,
+among others. For example, on 27th June during Confederations cup
+semi-final in Fortaleza, around 5000 protestors clashed with the police
+near the Castelao stadium - In this case EMBERS sent out an alert the
+day before. Then later on 30th June, when the last games of the
+confederation cup took place in Rio de Janeiro and Salvador that were
+also plagued by mass protests – EMBERS predicted these events and
+submitted multiple alerts for Rio on 28th and 29th June and one for
+Salvador on 29th June.
+
+\begin{figure}[H]
+\includegraphics[height=.6\columnwidth]{cu/brazilJune13_map}
+\caption{Geographic overlap of Groud Truth protest events and EMBERS
+alerts for Brazil June 2013.}
+\label{fig:brazilJune13_map}
+\end{figure}
 
 \textbf{Venezuelan Spring (Feb-March 2014)}:
 EMBERS captured some of the first `calls to protest` for the trigger city of
@@ -70,16 +128,37 @@ needs and against the introduction of new public-private partnership law.
 \label{fig:paraguay15}
 \end{figure}
 
+
+\subsection{Events missed by EMBERS}:
+The following section details out certain events that EMBERS failed to
+capture properly.
+
 \textbf{Brazil Protests (March 2015)}: EMBERS predicted the accurate
 increase in the rate of events but does not capture the true counts. The
 protests were mainly targeted against president Dilma Rousseff due to
-increasing corruption.
+increasing corruption. 
+
+During this period there was a significant architectural change in the
+EMBERS processing pipeline. EMBERS had moved to Heideltime temporal
+tagger from the previously used TIMEN temporal tagger due to
+Heideltime`s support for more languages and active development cycle as
+opposed to TIMEN. Heideltime had no support for portuguese (the main
+language used in Brazil) and EMBERS team had extended Heideltime to
+portuguese by translating the resources for spanish to portuguese. It
+turned out that simple translation of rules from spanish to portuguese
+were not sufficient and this affected the recall of one of our main
+models for Brazil - Planned Protest - as it depended on the quality and recall of
+date extraction from text.
+
 
 \sathap{Brazil 2015 is also an example of where EMBERS missed
 capturing the peak}
 
 \begin{figure}[H]
 \includegraphics[width=.8\columnwidth]{cu/brazilMarch15}
-\caption{BrazSpring}
+\caption{Brazil 2015 Protests}
 \label{fig:brazilSpring}
 \end{figure}
+
+
+\textbf{Mexico December 1, 2014 Protests}:

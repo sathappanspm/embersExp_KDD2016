@@ -56,7 +56,7 @@
 \graphicspath{{./figures/}}
 \usepackage{color}
 \usepackage[utf8]{inputenc}
-
+\DeclareUnicodeCharacter{00A0}{ }
 
 \newcommand{\sathap}[1]{[{\color{magenta}\textit{Sathappan}\textit{: #1}}]}
 \newcommand{\saurav}[1]{[{\color{magenta}\textit{Saurav}\textit{: #1}}]}
@@ -160,30 +160,36 @@ Open Source Indicators Forecasting System}
   Parang Saraf\footnotemark[1],
   Nathan Self\footnotemark[1], 
   Liang Zhao\footnotemark[1],\\
-  Jose Cadena\footnotemark[1],
-  Theodoros Rekatsinas\footnotemark[2],
+  Jose Cadena\footnotemark[9],
+  Theodoros Rekatsinas\footnotemark[10],
   Chang-Tien Lu\footnotemark[1],
-  Bert Huang\footnotemark[1],
-  Anil Vullikanti\footnotemark[1],\\
-  Achla Marathe\footnotemark[1],
-  Madhav Marathe\footnotemark[1],
+  Elaine O. Nsoesie\footnotemark[11],
+  John S. Brownstein\footnotemark[11],
+  Sumiko R Mekaru\footnotemark[11],
+  Bert Huang\footnotemark[9],
+  Anil Vullikanti\footnotemark[9],\\
+  Achla Marathe\footnotemark[9],
+  Madhav Marathe\footnotemark[9],
   Lise Getoor\footnotemark[3],
   Kristen Summers\footnotemark[8],
-  Graham Katz\footnotemark[8], \\
+  Graham Katz\footnotemark[4], \\
   Andy Doyle\footnotemark[4],
   Jaime Arredondo\footnotemark[6],
   Dipak Gupta\footnotemark[7],
   David Mares\footnotemark[6],
   Naren Ramakrishnan\footnotemark[1],
 \\
-\affaddr{\footnotemark[1]~~Virginia Tech}\\
+\affaddr{\footnotemark[1]~~Virginia Tech, 900 N.Glebe Rd., Arlington, VA 22207}\\
+\affaddr{\footnotemark[9]~~Virginia Tech, Blacksburg, VA 24060}\\
 \affaddr{\footnotemark[2]~~University of Maryland, College Park, MD 20742}\\
 \affaddr{\footnotemark[3]~~University of California at Santa Cruz, Santa Cruz, CA 95064}\\
-\affaddr{\footnotemark[8]~~~IBM Inc.}\\
+\affaddr{\footnotemark[8]~~~\sathap{IBM Inc.}}\\
 \affaddr{\footnotemark[6]~~University of California at San Diego, San Diego, CA 92093}\\
 \affaddr{\footnotemark[7]~~~San Diego State University, San Diego, CA 92182} \\
 \affaddr{\footnotemark[5]~~BASIS Technology, Herndon, VA 20171}\\
 \affaddr{\footnotemark[4]~~CACI Inc., Lanham, MD 20706}\\
+\affaddr{\footnotemark[10]~~Stanford University, Stanford, CA 94305}\\
+\affaddr{\footnotemark[11]~~\sathap{TBD}}\\
 }
 \maketitle
 \begin{abstract}
@@ -268,9 +274,10 @@ examples only.
 {\small Supported by the Intelligence Advanced Research Projects Activity (IARPA) via
 DoI/NBC contract number D12PC000337, the US Government is authorized to reproduce and distribute reprints of
 this work for Governmental purposes notwithstanding any copyright annotation thereon.
-Aravind Srinivasan and Khoa Trinh were also supported in part by NSF Award CNS
-1010789.
-Disclaimer: The views and conclusions contained herein are those of the authors and should not be interpreted as necessarily representing the official policies or endorsements, either expressed or implied, of IARPA, DoI/NBC, or the US Government.
+Disclaimer: The views and conclusions contained herein are
+those of the authors and should not be interpreted as necessarily
+representing the official policies or endorsements, either expressed or
+implied, of IARPA, DoI/NBC, or the US Government.
 }
 % The following two commands are all you need in the
 % initial runs of your .tex file to
