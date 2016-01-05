@@ -22,7 +22,7 @@ a "General Population" protest.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=.8\columnwidth]{cu/brazilJune13}
+\includegraphics[width=.99\columnwidth]{cu/brazilJune13}
 \caption{Brazil Spring}
 \label{fig:brazilJune13}
 \end{figure}
@@ -190,5 +190,39 @@ in as President in 2012 amidst much controversy and opposition from
 general public. Also another reason for the missed prediction was due to 
 EMBERS inability in extracting dates mentioned using twitter lingo  like "\#1Dmx".
 
+\subsection{Surprising Events Predicted by EMBERS}To rigorously evaluate the capabilities of EMBERS, we implemented a baserate model as a yardstick for comparison. The baserate model generates alerts using the rate of occurrence of events in the past three months. While such a model will perform well when the average number of events per month doesn't fluctuate much, it will miss out predictions when there are sudden wide-spread nationwide protest events. 
 
+\begin{table}
+\caption{List of Nation-wide Events}
+\renewcommand{\arraystretch}{1.1}
+\vspace{-3mm}
+ \centering
+ \begin{tabular}{|l|l|m{6cm}|}
+ 
+ \hline
+May'13  &  Colombia	 &  Nationwide protests against administrative policy changes regarding Youth in Action program and Social Security Pension \\ \hline
+Jun'13  &  Brazil  &  Brazilian Spring \\ \hline
+Jul'13  &  Brazil  &  Brazilian Spring \\ \hline
+Sep'13  &  Mexico  &  Nationwide protests Against Education and Energy Reforms \\ \hline
+Oct'13  &  Mexico  &  Nationwide protests Against Education and Energy Reforms \\ \hline
+Oct'13  &  Uruguay  &  Nationwide protests demading increase in minimum wage \\ \hline
+Feb'14  &  Venezuela	  &  Venezuelan Spring \\ \hline
+Mar'14  &  Venezuela  &  	Venezuelan Spring \\ \hline
+May'14  &  Brazil  &  Nationwide demonstrations in response to the 2014 FIFA World Cup and other Social Issues \\ \hline
+Jun'14  &  Brazil  &  Nationwide demonstrations in response to the 2014 FIFA World Cup and other Social Issues \\ \hline
+Aug'14  &  Argentina	  &  Nationwide protests against fall in wages, employment and inflation \\ \hline
+Sep'14  &  Ecuador  &  Nationwide protests to demand changes in labor policies \\ \hline
+Oct'14  &  Mexico  &  Nationwide protests because of the discovery of Mass Grave of Kidnapped Students  \\ \hline
+\end{tabular}
+\vspace{-5mm}
+\label{tab:maxentEvents}
+\end{table}
 
+In table~\ref{tab:maxentEvents} we present several such cases where sudden nationwide events erupted. For all these events, we compare the recall of both EMBERS and baserate model in figure ~\ref{fig:maxent}. While EMBERS is able to pick up `{indicators}' for these protest events, baserate model fails to deliver.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=.8\columnwidth]{cu/maxent}
+\caption{Recall comparison of Surprising Events}
+\label{fig:maxent}
+\end{figure}
