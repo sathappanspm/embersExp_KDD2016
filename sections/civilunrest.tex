@@ -192,13 +192,37 @@ EMBERS inability in extracting dates mentioned using twitter lingo  like "\#1Dmx
 
 \subsection{Surprising Events Predicted by EMBERS}To rigorously evaluate the capabilities of EMBERS, we implemented a baserate model as a yardstick for comparison. The baserate model generates alerts using the rate of occurrence of events in the past three months. While such a model will perform well when the average number of events per month doesn't fluctuate much, it will miss out predictions when there are sudden wide-spread nationwide protest events. 
 
+
+In order to identify surprising events, we employed a Maximum Entropy Based Approach. For this approach, each event is described using the following three dimensions: Country, Population and Event Type. A three-dimensional cuboid as shown in figure ~\ref{fig:maxent_model} succinctly captures the event distribution across the three dimensions. In the Maximum Entropy Approach, Maximum Likelihood Estimates for each cell of this cuboid is generated while keeping the marginals constant. For any given month, deviations from these MLE estimates are calculated and the cells with maximum deviations are termed as `surprising events cell'.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=.7\columnwidth]{cu/maxent_model}
+\caption{Maximum Entropy Counts Cuboid}
+\label{fig:maxent_model}
+\end{figure}
+
+Every month, events from the last three months of GSR is used to populate this event distribution cuboid. Once the cuboid is populated, we apply Iterative Proportional Fitting Procedure\cite{ipfp} to estimate the Maximum Likelihood values for each cell while keeping the marginals constant. The resultant cuboid is then scaled to matched the number of events in the current month. A similar three-dimensional cuboid is generated for the events of the current month and difference is calculated between actual counts and scaled MLE counts for each cell. Subsequently, all the cells with difference greater that 5-sigma are classified as `surprising' and events corresponding to these cells are used to generated a smaller version of GSR called `Surprising GSR'. 
+
+\subsubsection{Iterative Proportional Fitting Procedure (IPFP)}
+IPFP was invented in 1940's by Deming and Stephan\cite{deming1940least}. It is used to obtain Maximum Likelihood Estimates for the elementary cells by iterative fitting of the sufficient configurations. The procedure for a three dimensional structure, described in much detail in \cite{bishop2007discrete}, proceeds as follows:
+\begin{enumerate}
+\item Once the marginals are identified, elementary cells are replaced by 1; $\widehat{m}^{(0)}_{ijk}=1$
+\item After initialization, the following three-step iterative cycle is performed till a satisfactory stopping goal is achieved:
+$$\widehat{m}^{(c+1)}_{ijk} = \widehat{m}^{(c)}_{ijk}\frac{x_{ij+}}{\widehat{m}^{(c)}_{ij+}}$$
+$$\widehat{m}^{(c+2)}_{ijk} = \widehat{m}^{(c+1)}_{ijk}\frac{x_{i+k}}{\widehat{m}^{(c+1)}_{i+k}}$$
+$$\widehat{m}^{(c+3)}_{ijk} = \widehat{m}^{(c+2)}_{ijk}\frac{x_{+jk}}{\widehat{m}^{(c)}_{+jk}}$$
+where c refers to iteration cycle and `+' refers to summation over a dimension. 
+\item The procedure stops if either the desired convergence of $\delta < 0.0001$ is achieved or the maximum number of iterations are reached.
+\end{enumerate}
+
+
 \begin{table}
 \caption{List of Nation-wide Events}
 \renewcommand{\arraystretch}{1.1}
 \vspace{-3mm}
  \centering
  \begin{tabular}{|l|l|m{6cm}|}
- 
  \hline
 May'13  &  Colombia	 &  Nationwide protests against administrative policy changes regarding Youth in Action program and Social Security Pension \\ \hline
 Jun'13  &  Brazil  &  Brazilian Spring \\ \hline
@@ -218,6 +242,8 @@ Oct'14  &  Mexico  &  Nationwide protests because of the discovery of Mass Grave
 \label{tab:maxentEvents}
 \end{table}
 
+
+\subsubsection{Surprising Events Results}
 In table~\ref{tab:maxentEvents} we present several such cases where sudden nationwide events erupted. For all these events, we compare the recall of both EMBERS and baserate model in figure ~\ref{fig:maxent}. While EMBERS is able to pick up `{indicators}' for these protest events, baserate model fails to deliver.
 
 \begin{figure}[H]
