@@ -34,7 +34,12 @@ social science hypothesis (e.g., whether disruptions in global oil markets led t
 To support this dichotomy of users, we implemented a mechanism wherein in addition to generating alerts, EMBERS
 also forecast the expected quality score for each forecast (using machine learning methods trained on
 past GSR-alert matches). This expected quality score measure provided a way for analysts to use quality
-directly as a way to tune the system to receive greater or fewer alerts.
+directly as a way to tune the system to receive greater or fewer
+alerts.Figure.~\ref{recallVsQS} shows the trade-off between final quality
+score and recall when alerts are suppressed based on expected quality.
+As expected we can see that the recall drops and quality increases as the cut-off
+threshold for expected quality is increased.
+
 
 \begin{figure}
 \centering
