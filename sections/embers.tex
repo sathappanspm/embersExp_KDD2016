@@ -33,7 +33,8 @@ A fusion/suppression engine~\cite{andy-scotland-paper} allows a tunable strategy
 alerts depending on whether the analyst's objective is higher precision versus recall. The
 underlying models used in EMBERS are: (i) planned protest model~\cite{pp-paper1,pp-paper2},
 (ii) dynamic query expnasion~\cite{dqe-plosone}, (iii) volume-based model~\cite{asonam},
-and (iv) a baseline model. The planned protest model, for news and social media (Twitter, Facebook),
+(iv) cascade regression~\cite{anil-plosone}, and
+and (v) a baseline model. The planned protest model, for news and social media (Twitter, Facebook),
 identifies explicit signs of organization and calls
 for protest, resolves relative mentions of time (e.g., `next Saturday') and space (e.g., `the square')
 to issue forecasts. The dynamic query expansion (DQE) model uses Twitter as a data source and learns time- and country-specific
@@ -47,7 +48,9 @@ and hybrid regression models) to forecast civil unrest events using features
 from social media (Twitter, blogs), news sources, 
 political event databases (ICEWS and GDELT~\cite{gdelt}), Tor~\cite{tor} statistics, food prices, and currency
 exchange rates. It aims to provide a multi-source perspective into forecasting by leveraging
-the selective superiorities of different data sources. Finally, the baseline model uses maximum likelihood
+the selective superiorities of different data sources. The cascade regression model
+aims to model activity related to organization and mobilization in Twitter~\cite{anil-plosone}.
+Finally, the baseline model uses maximum likelihood
 estimation over the GSR to issue history-based forecasts.
 
 The EMBERS project is unique not just in its algorithmic underpinnings but also in the use of new measures
