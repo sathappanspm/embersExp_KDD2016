@@ -1,18 +1,55 @@
 \section{Introduction}
-Anticipatory intelligence.
+Modern communication forms such as social media and microblogs are not only rapidly
+advancing our understanding of the world but also improving the methods by which we can 
+comprehend, and even forecast, the progression of events.
+Tracking population-level activities via `massive passive' data has been shown to 
+quite accurately shed light into large-scale societal movements. 
 
-EMBERS.
+Two years back, in KDD 2014, we described EMBERS~\cite{beatingthenews-kdd}, a deployed anticipatory
+intelligence system~\cite{bigdata-andy-doyle-embers-paper} that forecasts significant 
+societal events (e.g., civil unrest
+events such as protests, strikes, and `occupy' events) using a large set of open source
+indicators such as news, blogs, tweets, food prices, currency rates, and other public
+data. The EMBERS system has been running continuosuly 24x7 for nearly 4 years at this point
+and our goal in this paper is to present the discoveries it has enabled,
+correct as well as missed
+forecasts, and lessons learnt from participating in a forecasting tournament including
+our perspectives on the limits of forecasting and ethical considerations. In
+particular, we shed insight into the value proposition to an analyst and how EMBERS forecasts
+are communicated to its end-users. 
 
-Many regions, but here only LA.
+The development of EMBERS is supported by the Intelligence Advanced Research Projects
+Activity (IARPA) Open Source Indicators (OSI) program. 
+EMBERS currently focuses on multiple regions of the world but for the purpose of this paper
+we focus primarily on Latin America, specifically the countries of
+Argentina, Brazil, Chile, Colombia, Ecuador, El Salvador, Mexico, Paraguay, Uruguay, and Venezuela.
+Similarly, EMBERS generates forecasts for multiple event classes---infleunza like illnesses~\cite{prithwish-ili},
+rare diseases~\cite{sdm-saurav}, elections~\cite{aravindan-wei-besc}, domestic political crises~\cite{gdelt-acm-webscience}, and civil unrest---but in this paper we focus primarily on civil unrest as this was the
+most challenging event class with hundreds of events every month across the countries studied here.
 
-Civil unrest, but also diseases.
-
-There are other regions and other event classes we don't consider.
-
-Contributions are:
+Our key contributions can be summarized as follows:
 \begin{enumerate}
-\item We are honest characters. We give both successes and failures.
-\item Rather than quantitative metrics, we talk about value to an analyst.
-\item One more - what?
+\item Unlike retrospective studies of predictability, EMBERS forecasts are communicated in real-time before the
+event to IARPA and scored independently of the authors. In an attempt to demystify the state-of-the-art
+in forecasting and create an open dialogue in the community, we report both successful
+forecasts of EMBERS as well as events missed by EMBERS. The events not forecast by EMBERS lead us to
+considerations of both limitations of the underlying technology as well as inherent limits to
+forecasting large-scale events.
+\item We present multiple quantiative indicators of EMBERS performance 
+as well as insights into how
+we made EMBERS forecasts most valuable to analysts. We report two primary
+ways in which analysts utilize EMBERS and the use of {\it automated
+narratives} to help make EMBERS forecasts as useful as possible.
+\item While social media is often touted as key to event forecasting
+systems such as EMBERS, we present the results of an ablation study to outline
+the performance degradation that ensues if data sources 
+such as Twitter and Facebook were to be removed from the forecasting pipeline.
+\item We consider the separation of civil unrest events into events
+that happen with a degree of regularity versus {\it black swan}~\cite{nassim-taleb} or significant
+events, and evaluate the performance of EMBERS in forecasting such
+surprising events.
+\item We describe our current best understanding of the limitations to
+forecasting civil unrest events using technologies like EMBERS and 
+also ethical considerations.
 \end{enumerate}
 
