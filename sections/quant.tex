@@ -3,7 +3,57 @@ First, we begin with a performance analysis of EMBERS, from both a quantitative
 point of view with respect to the GSR and with respect to end-user (analyst) goals.
 \subsection{Quantitative Metrics}
 \begin{figure}
-\includegraphics[width=0.8\columnwidth]{figures/cu/performance_tb1}
+%\includegraphics[width=0.8\columnwidth]{figures/cu/performance_tb1}
+
+\definecolor{LightCyan}{rgb}{0.85,.95,.95}
+\definecolor{yes}{RGB}{26,175,84}
+\definecolor{no}{RGB}{253,191,45}
+\definecolor{close}{RGB}{148,206,88}
+\resizebox{\columnwidth}{!}{
+\rowcolors{2}{gray!20}{white}
+\begin{tabular}{|l|c|c|c|}
+    \hline \rowcolor{LightCyan}
+    \textbf{Metric}                 & \textbf{Month 12}  & \textbf{Month 24} & \textbf{Month 36} \\
+    \hline
+    Mean Lead-Time         & 1 day    & 3 days   & 7 days \\
+    \hline
+    Mean Probability Score & 0.60     & 0.70     & 0.85 \\
+    \hline
+    Mean Quality Score     & 3.0      & 3.25     & 3.5 \\
+    \hline
+    Recall                 & 0.50     & 0.65     & 0.80 \\
+    \hline
+    Precision              & 0.50     & 0. 65    & 0.80 \\
+    \hline
+\end{tabular}
+}
+\resizebox{\columnwidth}{!}{
+\rowcolors{4}{gray!20}{white}
+\begin{tabular}{|l|c|c|c|}
+    \hline \rowcolor{LightCyan}
+                           & \textbf{Month 12}  & \textbf{Month 24} & \textbf{Month 36} \\
+    \rowcolor{LightCyan}
+                           & 4 months of
+                           & 12 months of
+                           &12 months of \\
+    \rowcolor{LightCyan}
+    \textbf{Metric}
+                           & warnings
+                           & warnings
+                           & warnings \\
+    \hline
+    Mean Lead-Time         & \cellcolor{yes} 3.89 days & \cellcolor{yes} 7.54 days & \cellcolor{yes} 9.76 days \\
+    \hline
+    Mean Probability Score & \cellcolor{yes} 0.72      & \cellcolor{yes} 0.89      & \cellcolor{yes} 0.88 \\
+    \hline
+    Mean Quality Score     & \cellcolor{no} 2.57       & \cellcolor{no}3.1         & \cellcolor{close}3.4 \\
+    \hline
+    Recall                 & \cellcolor{yes} 0.80      & \cellcolor{close} 0.65    & \cellcolor{yes} 0.79 \\
+    \hline
+    Precision              & \cellcolor{yes} 0.59      & \cellcolor{yes} 0.94      & \cellcolor{yes} 0.87 \\
+    \hline
+\end{tabular}
+}
 \caption{IARPA OSI targets and results achieved by EMBERS}
 \label{quant}
 \end{figure}
@@ -63,6 +113,8 @@ threshold for expected quality is increased.
 \caption{Comparison of number of perfect scores(4.0) obtained by EMBERS vs BaseRate per month in 2013.}
 \label{fig:perfect_score}
 \end{figure}
+
+
 
 \narenc{Insert narrative here.}
 \input{figures/cu/narrative.tex}
