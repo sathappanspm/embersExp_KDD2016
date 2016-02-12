@@ -34,16 +34,23 @@ alerts from each model are de-duplicated, fused, and selected and finally
 emitted as a full forecast.
 \narenc{Patrick complete this using your own words.}
 
-The structure of a civil unrest forecast is shown below:
+The structure of a civil unrest forecast is shown in
+Figure.~\ref{fig:alert} (left).
 \narenc{Give an example of a forecast here. With arrows.}
 \begin{figure}
 \includegraphics[width=\columnwidth]{figures/cu/alert_vs_gsr.pdf}
 \caption{An example depicting how an alert is scored with respect to the ground truth.}
+\label{fig:alert}
 \end{figure}
-As shown here, a forecast constitutes four fields, corresponding to the when, where, who, and why
+As shown in the figure, a forecast constitutes four fields, corresponding to the when, where, who, and why
 of the protest. These fields are respectively denoted as the date, location, population, and event type.
 Location is recorded at the city level. Population and event type are fields chosen from a categorical
-set of possibilities.
+set of possibilities.The figure further shows how an alert with all
+these fields are scored against a GSR event. In the basic scoring
+methodology shown in the Figure.~\ref{fig:alert} each of the four fields
+are weighted uniformly and a total quality score out of 4 is
+obtained.Apart from this each alert also has a lead-time associated with
+it calculated as shown in Figure.~\ref{fig:leadtime}.
 
 Rather than design one model to integrate all possible data sources, EMBERS adopted a multi-model
 approach to forecasting. Each model utilized a specific (possibly overlapping) set of data sources
