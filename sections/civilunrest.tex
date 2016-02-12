@@ -1,16 +1,16 @@
 \section{EMBERS Successes and Misses}
 Next, we detail
-some of the successful as well as not so successful forecasts made by EMBERS over 
+some of the successful as well as not so successful forecasts made by EMBERS over
 the past few years in Latin America.
 \subsection{Successful Forecasts}
 \subsubsection*{Brazilian Spring (June 2013)}
 These protests were the largest and most
-significant protests in Brazil`s recent history and caught worldwide
+significant protests in Brazil's recent history and caught worldwide
 attention. Millions of Brazilians took part in these demonstrations,
 also known as the Brazilian Spring or the Vinegar Movement (inspired
 from the use of vinegar soaked cloth by demonstrators to protect
 themselves from police teargas). These protests were
-sparked by an increase in public transport fares from $R\$3$ 
+sparked by an increase in public transport fares from $R\$3$
 to $R\$3.20$ by the government of President Dilma Rousseff.
 
 As shown in Figure.~\ref{fig:brazilJune13} EMBERS, while missing the initial uptick,
@@ -39,7 +39,7 @@ government corruption, over-spending, and police brutality. The
 demonstrators also made calls for political reforms. In response, President
 Rousseff proposed a plebiscite on widespread political reforms in
 Brazil (but this was was later abandoned). Through its dynamic query expansion model,
-EMBERS was able to capture such discussions on Twitter 
+EMBERS was able to capture such discussions on Twitter
 (see Figure.~\ref{fig:brazilJune13_wordCloud}), and tracked their evolution as events
 unfolded through June.
 
@@ -61,7 +61,7 @@ EMBERS issued most of its alerts for these host cities (see Figure
 Rio de Janeiro, São Paulo,
 Belo Horizonte, Salvador, and Porto Alegre,
 among others. For example, on 27th June during the Confederations Cup
-semi-final in Fortaleza, around 5000 protestors clashed with the police
+semi-final in Fortaleza, around 5000 protesters clashed with the police
 near the Castelao stadium. In this case EMBERS had forecast an alert the
 day before. Later on the 30th of June, when the last games of the
 confederation cup took place in Rio de Janeiro and Salvador, they
@@ -134,12 +134,12 @@ between counts of GSR events and EMBERS alerts on a daily basis.}
 \narenc{First one paragraph about what these protests are.}
 
 EMBERS successfully forecast the uptick in the number of events during the
-middle of December 2014 and also the increase in protest counts 
-during February 2015 as shown in Fig.~\ref{fig:colombiaDec14}, though in the 
+middle of December 2014 and also the increase in protest counts
+during February 2015 as shown in Fig.~\ref{fig:colombiaDec14}, though in the
 latter case EMBERS over-predicted the counts. The uptick in
 December 2014 was led by opposition leader Alvaro Uribe against impunity.
 \narenc{impunity? do you mean immunity? immunity for/against what?}
-The increase in protest counts during Feb 2015 was 
+The increase in protest counts during Feb 2015 was
 caused by a truckers' strike against fuel price increases.
 
 \begin{figure}[H]
@@ -154,7 +154,7 @@ caused by a truckers' strike against fuel price increases.
 The events were mainly due to the lack of opportunity and basic
 needs and against the introduction of new public-private partnership law.
 EMBERS forecast the uptick in number of protest events in Paraguay during mid
-February 2015 as shown in Fig.~\ref{fig:paraguay15}. 
+February 2015 as shown in Fig.~\ref{fig:paraguay15}.
 
 \begin{figure}[H]
 \centering
@@ -171,21 +171,21 @@ reasons.
 \subsubsection{Brazilian Protests (March 2015)}
 \narenc{First, explain what these protests are about.}
 The protests were mainly targeted against president Dilma Rousseff due to
-increasing corruption. 
-While EMBERS accurately predicted that there 
+increasing corruption.
+While EMBERS accurately predicted that there
 will be an increase in the rate of events it failed to
 capture the true counts.
 
 During this period there was a significant architectural change in the
 EMBERS processing pipeline. EMBERS had moved to the Heideltime temporal
 tagger from the previously used TIMEN temporal tagger due to
-Heideltime`s support for more languages and an active development cycle as 
+Heideltime's support for more languages and an active development cycle as
 opposed to TIMEN. \narenc{Find some way to mention temporal tagging somewhere
 in the background section, so it doesn't appear so sudden here.}
 \narenc{Also give citations for TIMEN and Heideltime.}
 Heideltime had no support for Portuguese (the primary
 language used in Brazil) and the EMBERS software development team had extended Heideltime to
-support Portuguese by translating the underyling
+support Portuguese by translating the underlying
 resources for Spanish to Portuguese. As we learnt subsequently,
 the simple translation of rules from Spanish to Portuguese
 was not sufficient and this affected the recall of one of the key models
@@ -214,7 +214,7 @@ EMBERS missed the huge single day spike on December 1st when
 EMBERS predicted nationwide events for December 1st but failed to
 capture the its spread.  \narenc{This previous sentence does not parse.
 Did it miss the spike, or did it predict it correctly? Fix it.}
-December 1st was picked by the protestors due to
+December 1st was picked by the protesters due to
 its historical significance. This was the day when President Pena Nieto was sworn
 in as President in 2012 amidst much controversy and opposition from
 many specific constituent groups. A specific reason why EMBERS missed this forecast
@@ -234,12 +234,13 @@ we should not have any excuse for. Point them to look at the limitations section
 \end{figure}
 \section{Forecasting Surprising Events}
 The GSR contains a mix of everyday, mundane, protests as well as surprising events such as the Brazilian Spring.
-We aimed to ascertain the relative ease of forecasting each class of events w.r.t. a simple baserate model.
+We aimed to ascertain the relative ease of forecasting each class of events
+with respect to a simple baserate model.
 
-The baserate model generates alerts using the rate of occurrence of events in the past three months. 
-\narenc{Talk about ecuador slides.}
+The baserate model generates alerts using the rate of occurrence of events in the past three months.
+\narenc{Talk about Ecuador slides.}
 
-To define surprising events, 
+To define surprising events,
 we employed a maximum entropy approach. For this purpose, each event is assumed
 to be describable
 in terms of three dimensions: country, population and event type. The GSR can then be conceptualized
@@ -252,7 +253,7 @@ induced by the cube using iterative proportional fitting~\cite{bishop2007discret
 $$\widehat{m}^{(c+1)}_{ijk} = \widehat{m}^{(c)}_{ijk}\frac{x_{ij+}}{\widehat{m}^{(c)}_{ij+}}$$
 $$\widehat{m}^{(c+2)}_{ijk} = \widehat{m}^{(c+1)}_{ijk}\frac{x_{i+k}}{\widehat{m}^{(c+1)}_{i+k}}$$
 $$\widehat{m}^{(c+3)}_{ijk} = \widehat{m}^{(c+2)}_{ijk}\frac{x_{+jk}}{\widehat{m}^{(c)}_{+jk}}$$
-where c refers to iteration cycle and `+' refers to summation over a dimension. 
+where $c$ refers to iteration cycle and `+' refers to summation over a dimension.
 \item The procedure stops if either the desired convergence of $\delta < 0.0001$ is achieved or the maximum number of iterations are reached.
 \end{enumerate}
 
@@ -268,7 +269,7 @@ where c refers to iteration cycle and `+' refers to summation over a dimension.
 Every month, events from the last three months of the
 GSR is used to populate the underlying cube of counts and the iterative proportional fitting procedure is
 used to estimate the maxent values for each cell. The resultant sample counts are then scaled to
-match the observed number of GSR events in the curent month. The cell-wise difference between the inferred
+match the observed number of GSR events in the current month. The cell-wise difference between the inferred
 maxent distribution and the observed GSR is computed and all cells with significance greater than five standard
 deviations are classified as containing surprising events. In essence, this approach takes the GSR as input and
 creates a truncated GSR against which we can evaluate EMBERS (and the baserate model).
@@ -280,20 +281,20 @@ creates a truncated GSR against which we can evaluate EMBERS (and the baserate m
  \centering
  \begin{tabular}{|l|l|m{6cm}|}
  \hline
-May'13  &  Colombia	 &  Nationwide protests against administrative policy changes regarding the
+May '13  &  Colombia	 &  Nationwide protests against administrative policy changes regarding the
 Youth in Action program and social security pension \\ \hline
-Jun'13  &  Brazil  &  Brazilian Spring \\ \hline
-Jul'13  &  Brazil  &  Brazilian Spring \\ \hline
-Sep'13  &  Mexico  &  Nationwide protests against education and energy reforms \\ \hline
-Oct'13  &  Mexico  &  Nationwide protests against education and energy reforms \\ \hline
-Oct'13  &  Uruguay  &  Nationwide protests demading increase in minimum wage \\ \hline
-Feb'14  &  Venezuela	  &  Venezuelan Student Protests \\ \hline
-Mar'14  &  Venezuela  &  	Venezuelan Student Protests \\ \hline
-May'14  &  Brazil  &  Nationwide demonstrations in response to the 2014 FIFA World Cup and other social issues \\ \hline
-Jun'14  &  Brazil  &  Nationwide demonstrations in response to the 2014 FIFA World Cup and other social issues \\ \hline
-Aug'14  &  Argentina	  &  Nationwide protests against drops in wages, employment, and rising inflation \\ \hline
-Sep'14  &  Ecuador  &  Nationwide protests to demand changes in labor policies \\ \hline
-Oct'14  &  Mexico  &  Nationwide protests after the discovery of mass graves of kidnapped students  \\ \hline
+Jun '13  &  Brazil  &  Brazilian Spring \\ \hline
+Jul '13  &  Brazil  &  Brazilian Spring \\ \hline
+Sep '13  &  Mexico  &  Nationwide protests against education and energy reforms \\ \hline
+Oct '13  &  Mexico  &  Nationwide protests against education and energy reforms \\ \hline
+Oct '13  &  Uruguay  &  Nationwide protests demanding increase in minimum wage \\ \hline
+Feb '14  &  Venezuela	  &  Venezuelan Student Protests \\ \hline
+Mar '14  &  Venezuela  &  	Venezuelan Student Protests \\ \hline
+May '14  &  Brazil  &  Nationwide demonstrations in response to the 2014 FIFA World Cup and other social issues \\ \hline
+Jun '14  &  Brazil  &  Nationwide demonstrations in response to the 2014 FIFA World Cup and other social issues \\ \hline
+Aug '14  &  Argentina	  &  Nationwide protests against drops in wages, employment, and rising inflation \\ \hline
+Sep '14  &  Ecuador  &  Nationwide protests to demand changes in labor policies \\ \hline
+Oct '14  &  Mexico  &  Nationwide protests after the discovery of mass graves of kidnapped students  \\ \hline
 \end{tabular}
 \vspace{-5mm}
 \label{tab:maxentEvents}
@@ -301,7 +302,7 @@ Oct'14  &  Mexico  &  Nationwide protests after the discovery of mass graves of 
 
 In Table~\ref{tab:maxentEvents} we present several inferred events in Latin America from our maximum entropy
 filter.
-For all these events, we compare the recall of both EMBERS and baserate model in Fig.~\ref{fig:maxent}. 
+For all these events, we compare the recall of both EMBERS and baserate model in Fig.~\ref{fig:maxent}.
 It is clear that EMBERS is able to forecast these significant upticks consistently.
 
 \begin{figure}[H]

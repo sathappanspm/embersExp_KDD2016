@@ -1,6 +1,6 @@
 \section{Performance Analysis}
-First, we begin with a performance analysis of EMBERS, from both a quantitative point of view w.r.t.
-the GSR and w.r.t. end-user (analyst) goals.
+First, we begin with a performance analysis of EMBERS, from both a quantitative
+point of view with respect to the GSR and with respect to end-user (analyst) goals.
 \subsection{Quantitative Metrics}
 \begin{figure}
 \includegraphics[width=0.8\columnwidth]{figures/cu/performance_tb1}
@@ -17,8 +17,8 @@ careful calibration of probabilities by taking into account estimates of
 model propensities and data source reliabilities. The measure that was most difficult to achieve
 was the quality score as it involved a four component additive score and thus tangible improvements in
 score required more than incremental improvements in forecasting specific components. Finally, recall
-and precision involve a natural underlying tradeoff and the deployment of our fusion/suppression
-engine provided the ability to balance this tradeoff to meet IARPA OSI's objectives.
+and precision involve a natural underlying trade-off and the deployment of our fusion/suppression
+engine provided the ability to balance this trade-off to meet IARPA OSI's objectives.
 
 % SATHAPPAN INSERT the quant table here.
 
@@ -27,11 +27,11 @@ In addition to the quantitative measures above, our experience interacting with 
 branches of government) demonstrated
 an interesting dichotomy to how analysts use EMBERS alerts. Some analysts preferred to use EMBERS in an
 `analytic triage' scenario wherein they could tune EMBERS for high recall so that they would apply their
-traditional measures of filtering and analysis to hone in on forecasts of interest. Other analysts 
+traditional measures of filtering and analysis to hone in on forecasts of interest. Other analysts
 instead viewed EMBERS as a data source and preferred to use it in a high precision mode, e.g., wherein they
 were focused on a specific region of the world (e.g., Venezuela) and aimed to investigate a particular
-social science hypothesis (e.g., whether disruptions in global oil markets led to civil unrest). 
-To support this dichtomy of users, we implemented a mechanism wherein in addition to generating alerts, EMBERS
+social science hypothesis (e.g., whether disruptions in global oil markets led to civil unrest).
+To support this dichotomy of users, we implemented a mechanism wherein in addition to generating alerts, EMBERS
 also forecast the expected quality score for each forecast (using machine learning methods trained on
 past GSR-alert matches). This expected quality score measure provided a way for analysts to use quality
 directly as a way to tune the system to receive greater or fewer alerts.
@@ -40,7 +40,7 @@ directly as a way to tune the system to receive greater or fewer alerts.
 \centering
 \includegraphics[scale=0.4]{figures/cu/recallVsQS.pdf}
 \label{fig:recallvsQS}
-\caption{Recall vs Quality Tradeoff}
+\caption{Recall vs Quality Trade-off}
 \end{figure}
 
 \narenc{Show forecast with comment describing predicted QS.}
