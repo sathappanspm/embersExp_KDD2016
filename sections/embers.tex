@@ -17,7 +17,21 @@ Task Force)~\cite{pitf} funded by the CIA.
 To the best of our knowledge, only EMBERS provides
 the most specific spatial resolution (city-level) and temporal resolution (daily-level) capability in forecasting.
 
-The software architecture of EMBERS (Early Model Based Event Recognition using Surrogates) is designed
+The software architecture of EMBERS (Early Model Based Event Recognition using
+Surrogates) is designed as a loosely coupled, highly distributed pipeline of
+processes connected viz ZeroMQ.  In this manner the system is both highly scalable and fault
+tolerant.  The EMBERS pipeline can loosely be broken up into four stages:
+ingestion, enrichment, modeling, and selection.  In the first stage, ingestion,
+data is collected from a variety of sources and streamed into the following
+stages in real-time.  Enrichment takes the raw data from the ingestion stage
+and processes it in various ways including natural language processing,
+geocoding, and relative time phrase normalization.  After enrichment, the
+modeling stage feeds the enriched data into the various models that make up
+EMBERS.  Unlike other systems which use single monolithic models to make
+predictions, EMBERS combines the results of several different models to arrive
+at the most accurate forecasts.  Finally, in the selection stage the separate
+alerts from each model are de-duplicated, fused, and selected and finally
+emitted as a full forecast.
 \narenc{Patrick complete this using your own words.}
 
 The structure of a civil unrest forecast is shown below:
