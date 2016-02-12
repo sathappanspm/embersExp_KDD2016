@@ -1,7 +1,8 @@
 \section{Background}
 We begin by providing a brief review of forecasting systems, followed by a
 quick preview of EMBERS, its system architecture, machine learning models,
-and measures for evaluating its performance. For more details, please see~\cite{kdd-beating}.
+and measures for evaluating its performance. For more details, please
+see~\cite{kdd:beating-the-news}.
 
 Forecasting societal events such as civil unrest has a long tradition in the intelligence analysis and political science
 community. We distinguish between forecasting systems versus event coding systems (that provide
@@ -14,32 +15,31 @@ and rebellion.
 A similar project in scope is PITF (Political Instability
 Task Force)~\cite{pitf} funded by the CIA.
 To the best of our knowledge, only EMBERS provides
-the most specific spatial resolution (city-level) and temporal resolution (daily-level) capability in forecasting. 
+the most specific spatial resolution (city-level) and temporal resolution (daily-level) capability in forecasting.
 
-The software architecture of EMBERS (Early Model Based Event Recognition using Surrogates) is designed 
+The software architecture of EMBERS (Early Model Based Event Recognition using Surrogates) is designed
 \narenc{Patrick complete this using your own words.}
 
 The structure of a civil unrest forecast is shown below:
 \narenc{Give an example of a forecast here. With arrows.}
 \begin{figure}
 \includegraphics[width=\columnwidth]{figures/cu/alert_vs_gsr.pdf}
-\caption{An example depicting how an alert is scored w.r.t to the ground truth.}
+\caption{An example depicting how an alert is scored with respect to the ground truth.}
 \end{figure}
 As shown here, a forecast constitutes four fields, corresponding to the when, where, who, and why
 of the protest. These fields are respectively denoted as the date, location, population, and event type.
 Location is recorded at the city level. Population and event type are fields chosen from a categorical
-set of possibilities. 
+set of possibilities.
 
-Rather than design one model to integrate all possible data sources, EMBERS adopted a multi-model 
+Rather than design one model to integrate all possible data sources, EMBERS adopted a multi-model
 approach to forecasting. Each model utilized a specific (possibly overlapping) set of data sources
 and is tuned for high precision, so that the union of these models can be tuned for high recall.
 A fusion/suppression engine~\cite{andy-scotland-paper} allows a tunable strategy to issue fewer/more
 alerts depending on whether the analyst's objective is higher precision versus recall. The
 underlying models used in EMBERS are: (i) planned protest model~\cite{pp-paper1,pp-paper2},
-(ii) dynamic query expnasion~\cite{dqe-plosone}, (iii) volume-based model~\cite{asonam},
-(iv) cascade regression~\cite{anil-plosone}, and
-and (v) a baseline model. The planned protest model, for news and social media (Twitter, Facebook),
-identifies explicit signs of organization and calls
+(ii) dynamic query expansion~\cite{dqe-plosone}, (iii) volume-based model~\cite{asonam},
+(iv) cascade regression~\cite{anil-plosone}, and (v) a baseline model. The planned protest model,
+for news and social media (Twitter, Facebook), identifies explicit signs of organization and calls
 for protest, resolves relative mentions of time (e.g., `next Saturday') and space (e.g., `the square')
 to issue forecasts. The dynamic query expansion (DQE) model uses Twitter as a data source and learns time- and country-specific
 expansions of a seed set of keywords to identify specific situational circumstances for civil unrest.
@@ -47,9 +47,9 @@ For instance, in Venezuela (an economy where the government exercises stringent 
 there were a series of protests in 2014 stemming from the shortage of toilet paper, a novel circumstance
 that was uncovered by DQE. The volume-based model uses a range of data sources, spanning
 social, economic
-and political indicators. It uses clasical statistical models (Lasso
+and political indicators. It uses classical statistical models (Lasso
 and hybrid regression models) to forecast civil unrest events using features
-from social media (Twitter, blogs), news sources, 
+from social media (Twitter, blogs), news sources,
 political event databases (ICEWS and GDELT~\cite{gdelt}), Tor~\cite{tor} statistics, food prices, and currency
 exchange rates. It aims to provide a multi-source perspective into forecasting by leveraging
 the selective superiorities of different data sources. The cascade regression model
@@ -68,7 +68,7 @@ at time $t4$ if $t1 < t4$.}
 The EMBERS project is unique not just in its algorithmic underpinnings but also in the use of new measures
 for evaluation, specifically aimed at determining forecasting performance. As shown in Fig.~\ref{fig:leadtime},
 one of the primary measures of EMBERS performance is lead time, the number of days by which a forecast
-`beats the news', i.e., the date of reporting of the event. Lead time should not be confused with 
+`beats the news', i.e., the date of reporting of the event. Lead time should not be confused with
 date quality, i.e., the difference between the predicted date and the actual date of the event. The date
 quality is one of the components to the quality score, the other components being the
 location score, event type score, and population score. Fig.~\ref{otherscores} show how these other
@@ -77,7 +77,8 @@ events for a given month, the lead time is used as a constraint to define legal 
 we can construct a bipartite matching to optimize the best quality score. From this bipartite matching,
 measures of precision and recall can be derived, i.e., by assessing the number of (un)matched events or
 alerts. Finally, a confidence score is used to assess the quality of probabilities imputed by EMBERS to its
-forecasts, and measured in terms of the Brier score. For more details, please see~\cite{beating-embers-kdd}. 
+forecasts, and measured in terms of the Brier score. For more details, please
+see~\cite{kdd:beating-the-news}.
 
 We now turn to a discussion of specific discoveries enabled by EMBERS, into civil unrest in Latin America, and into
 the complexity of the forecasting enterprise, as a whole.

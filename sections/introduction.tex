@@ -1,32 +1,32 @@
 \section{Introduction}
 Modern communication forms such as social media and microblogs are not only rapidly
-advancing our understanding of the world but also improving the methods by which we can 
+advancing our understanding of the world but also improving the methods by which we can
 comprehend, and even forecast, the progression of events.
-Tracking population-level activities via `massive passive' data has been shown to 
-quite accurately shed light into large-scale societal movements. 
+Tracking population-level activities via `massive passive' data has been shown to
+quite accurately shed light into large-scale societal movements.
 
-Two years back, in KDD 2014, we described EMBERS~\cite{beatingthenews-kdd}, a deployed anticipatory
-intelligence system~\cite{bigdata-andy-doyle-embers-paper} that forecasts significant 
+Two years back, in KDD 2014, we described EMBERS~\cite{kdd:beating-the-news}, a deployed anticipatory
+intelligence system~\cite{bigdata-andy-doyle-embers-paper} that forecasts significant
 societal events (e.g., civil unrest
 events such as protests, strikes, and `occupy' events) using a large set of open source
 indicators such as news, blogs, tweets, food prices, currency rates, and other public
-data. The EMBERS system has been running continuosuly 24x7 for nearly 4 years at this point
+data. The EMBERS system has been running continuously 24x7 for nearly 4 years at this point
 and our goal in this paper is to present the discoveries it has enabled,
 correct as well as missed
 forecasts, and lessons learnt from participating in a forecasting tournament including
 our perspectives on the limits of forecasting and ethical considerations. In
 particular, we shed insight into the value proposition to an analyst and how EMBERS forecasts
-are communicated to its end-users. 
+are communicated to its end-users.
 
 The development of EMBERS is supported by the Intelligence Advanced Research Projects
-Activity (IARPA) Open Source Indicators (OSI) program. 
-EMBERS forecasts are scored against the GSR (Gold Standard Report), a monthly catalog of 
+Activity (IARPA) Open Source Indicators (OSI) program.
+EMBERS forecasts are scored against the GSR (Gold Standard Report), a monthly catalog of
 events as reported in newspapers of record in the above countries. The GSR is compiled by MITRE corporation
 using human analysts.
 EMBERS currently focuses on multiple regions of the world but for the purpose of this paper
 we focus primarily on Latin America, specifically the countries of
 Argentina, Brazil, Chile, Colombia, Ecuador, El Salvador, Mexico, Paraguay, Uruguay, and Venezuela.
-Similarly, EMBERS generates forecasts for multiple event classes---infleunza like illnesses~\cite{prithwish-ili},
+Similarly, EMBERS generates forecasts for multiple event classes---influenza like illnesses~\cite{prithwish-ili},
 rare diseases~\cite{sdm-saurav}, elections~\cite{aravindan-wei-besc}, domestic political crises~\cite{gdelt-acm-webscience}, and civil unrest---but in this paper we focus primarily on civil unrest as this was the
 most challenging event class with hundreds of events every month across the countries studied here.
 
@@ -34,8 +34,8 @@ Our key contributions can be summarized as follows:
 \narenc{Refer to sections in each bullet.}
 \begin{enumerate}
 \item Unlike retrospective studies of predictability, EMBERS forecasts are communicated in real-time before the
-event to MITRE/IARPA and scored independently of the authors. 
-We present multiple quantiative indicators of EMBERS performance 
+event to MITRE/IARPA and scored independently of the authors.
+We present multiple quantitative indicators of EMBERS performance
 as well as insights into how
 we made EMBERS forecasts most valuable to analysts. We report two primary
 ways in which analysts utilize EMBERS and the use of {\it automated
@@ -48,7 +48,7 @@ considerations of both limitations of the underlying technology as well as inher
 forecasting large-scale events.
 \item While social media is often touted as key to event forecasting
 systems such as EMBERS, we present the results of an ablation study to outline
-the performance degradation that ensues if data sources 
+the performance degradation that ensues if data sources
 such as Twitter and Facebook were to be removed from the forecasting pipeline.
 \item We consider the separation of civil unrest events into events
 that happen with a degree of regularity versus rare
@@ -56,7 +56,7 @@ or significant
 events, and evaluate the performance of EMBERS in forecasting such
 surprising events.
 \item We describe our current best understanding of the limitations to
-forecasting civil unrest events using technologies like EMBERS and 
+forecasting civil unrest events using technologies like EMBERS and
 also ethical considerations.
 \end{enumerate}
 
