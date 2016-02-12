@@ -9,11 +9,22 @@ point of view with respect to the GSR and with respect to end-user (analyst) goa
 \definecolor{yes}{RGB}{26,175,84}
 \definecolor{no}{RGB}{253,191,45}
 \definecolor{close}{RGB}{148,206,88}
+
 \resizebox{\columnwidth}{!}{
-\rowcolors{2}{gray!20}{white}
+\rowcolors{5}{gray!20}{white}
 \begin{tabular}{|l|c|c|c|}
+    \multicolumn{4}{c}{\textbf{Targets}} \\
     \hline \rowcolor{LightCyan}
-    \textbf{Metric}                 & \textbf{Month 12}  & \textbf{Month 24} & \textbf{Month 36} \\
+                           & \textbf{Month 12}  & \textbf{Month 24} & \textbf{Month 36} \\
+    \rowcolor{LightCyan}
+                           & 4 months of
+                           & 12 months of
+                           &12 months of \\
+    \rowcolor{LightCyan}
+    \textbf{Metric}
+                           & warnings
+                           & warnings
+                           & warnings \\
     \hline
     Mean Lead-Time         & 1 day    & 3 days   & 7 days \\
     \hline
@@ -28,19 +39,11 @@ point of view with respect to the GSR and with respect to end-user (analyst) goa
 \end{tabular}
 }
 \resizebox{\columnwidth}{!}{
-\rowcolors{4}{gray!20}{white}
+\rowcolors{2}{gray!20}{white}
 \begin{tabular}{|l|c|c|c|}
+    \multicolumn{4}{c}{\textbf{Actual}} \\
     \hline \rowcolor{LightCyan}
-                           & \textbf{Month 12}  & \textbf{Month 24} & \textbf{Month 36} \\
-    \rowcolor{LightCyan}
-                           & 4 months of
-                           & 12 months of
-                           &12 months of \\
-    \rowcolor{LightCyan}
-    \textbf{Metric}
-                           & warnings
-                           & warnings
-                           & warnings \\
+    \textbf{Metric}                 & \textbf{Month 12}  & \textbf{Month 24} & \textbf{Month 36} \\
     \hline
     Mean Lead-Time         & \cellcolor{yes} 3.89 days & \cellcolor{yes} 7.54 days & \cellcolor{yes} 9.76 days \\
     \hline
