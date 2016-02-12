@@ -53,8 +53,16 @@ aims to model activity related to organization and mobilization in Twitter~\cite
 Finally, the baseline model uses maximum likelihood
 estimation over the GSR to issue history-based forecasts.
 
+\begin{figure}
+\includegraphics[width=\columnwidth]{figures/cu/timeline.pdf}
+\caption{Alert sent at time $t1$ predicting an event at time $t3$
+can be matched to a GSR event that happened at time $t2$ and reported
+at time $t4$ if $t1 < t4$.}
+\label{fig:leadtime}
+\end{figure}
+
 The EMBERS project is unique not just in its algorithmic underpinnings but also in the use of new measures
-for evaluation, specifically aimed at determining forecasting performance. As shown in Fig.~\ref{leadtime},
+for evaluation, specifically aimed at determining forecasting performance. As shown in Fig.~\ref{fig:leadtime},
 one of the primary measures of EMBERS performance is lead time, the number of days by which a forecast
 `beats the news', i.e., the date of reporting of the event. Lead time should not be confused with 
 date quality, i.e., the difference between the predicted date and the actual date of the event. The date
