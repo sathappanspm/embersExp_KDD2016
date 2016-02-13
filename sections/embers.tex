@@ -43,16 +43,16 @@ emitted as a full forecast for a real world event.
 \end{figure}
 
 The structure of a civil unrest forecast is shown in
-Figure.~\ref{fig:alert} (left).
+Figure~\ref{fig:alert} (left).
 A forecast constitutes four fields, corresponding to the when, where, who, and why
 of the protest. These fields are respectively denoted as the date, location, population, and event type.
 Location is recorded at the city level. Population and event type are fields chosen from a categorical
 set of possibilities.  The figure further shows how an alert with all
 these fields are scored against a GSR event. In the basic scoring
-methodology shown in the Figure.~\ref{fig:alert} each of the four fields
+methodology shown in Figure~\ref{fig:alert} each of the four fields
 are weighted uniformly and a total quality score out of 4 is
 obtained.  Apart from this each alert also has a lead-time associated with
-it calculated as shown in Figure.~\ref{fig:leadtime}.
+it calculated as shown in Figure~\ref{fig:leadtime}.
 
 Rather than design one model to integrate all possible data sources, EMBERS adopted a multi-model
 approach to forecasting. Each model utilized a specific (possibly overlapping) set of data sources
@@ -90,12 +90,13 @@ at time $t4$ if $t1 < t4$.}
 \end{figure}
 
 The EMBERS project is unique not just in its algorithmic underpinnings but also in the use of new measures
-for evaluation, specifically aimed at determining forecasting performance. As shown in Fig.~\ref{fig:leadtime},
+for evaluation, specifically aimed at determining forecasting performance. As
+shown in Figure~\ref{fig:leadtime},
 one of the primary measures of EMBERS performance is lead time, the number of days by which a forecast
 `beats the news', i.e., the date of reporting of the event. Lead time should not be confused with
 date quality, i.e., the difference between the predicted date and the actual date of the event. The date
 quality is one of the components to the quality score, the other components being the
-location score, event type score, and population score. Fig.~\ref{otherscores} show how these other
+location score, event type score, and population score. Figure~\ref{otherscores} show how these other
 components are scored between an EMBERS forecast and a GSR record. Given a set of alerts and a set of
 GSR events for a given month, the lead time is used as a constraint to define legal (alert, event) pairs so that
 we can construct a bipartite matching to optimize the best quality score. From this bipartite matching,

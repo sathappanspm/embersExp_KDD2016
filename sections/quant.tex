@@ -60,7 +60,7 @@ point of view with respect to the GSR and with respect to end-user (analyst) goa
 \caption{IARPA OSI targets and results achieved by EMBERS}
 \label{quant}
 \end{figure}
-Fig.~\ref{quant} depicts both the targets set by the IARPA OSI program as well as the
+Figure~\ref{quant} depicts both the targets set by the IARPA OSI program as well as the
 actual measures achieved by the EMBERS system. As shown here, the easiest target to achieve
 in EMBERS was, surprisingly, the lead time objective. This was feasible due to EMBERS's focus on modeling
 both planned and spontaneous events. Planned events are sometimes organized with as many as several weeks
@@ -75,7 +75,7 @@ engine provided the ability to balance this trade-off to meet IARPA OSI's object
 
 Apart from comparing mean scores another interesting metric is to see
 how many perfect matches (4.0 quality score) are obtained by a
-algorithm.Fig.~\ref{fig:perfect_score} shows the number of alerts issued
+algorithm.Figure~\ref{fig:perfect_score} shows the number of alerts issued
 by EMBERS that matched perfectly to an event in the future on a monthly
 basis for 2013.The figure clearly shows that EMBERS makes almost double
 the number of fully accurate forecasts as compared to the baserate
@@ -96,19 +96,19 @@ To support this dichotomy of users, we implemented a mechanism wherein in additi
 also forecasted the expected quality score for each forecast (using machine learning methods trained on
 past GSR-alert matches). This expected quality score measure provided a way for analysts to use quality
 directly as a way to tune the system to receive greater or fewer
-alerts.Figure~\ref{recallVsQS} shows the trade-off between final quality
+alerts.  Figure~\ref{fig:recallVsQS} shows the trade-off between final quality
 score and recall when alerts are suppressed based on expected quality.
 As expected we can see that the recall drops and quality increases as the cut-off
 threshold for expected quality is increased.
 
 \narenc{Show forecast with comment describing predicted QS.}
-\begin{figure}
+\begin{figure}[t]
 \includegraphics[width=\columnwidth]{figures/cu/perf_figures.pdf}
 \caption{Comparison of number of perfect scores(4.0) obtained by EMBERS vs BaseRate per month in 2013.}
 \label{fig:perfect_score}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
 \centering
 \includegraphics[width=\columnwidth]{figures/cu/recallVsQS.pdf}
 %\includegraphics[height=0.2\textheight]{figures/cu/recallVsQS.pdf}
@@ -117,4 +117,4 @@ threshold for expected quality is increased.
 \end{figure}
 
 \input{figures/cu/narrative.tex}
-\narenc{Write explanation of how narrative(Fig.~\ref{fig:narrative}) was come up with.}
+\narenc{Write explanation of how narrative (Figure~\ref{fig:narrative}) was come up with.}
