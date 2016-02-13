@@ -5,22 +5,22 @@ comprehend, and even forecast, the progression of events.
 Tracking population-level activities via `massive passive' data has been shown to
 quite accurately shed light into large-scale societal movements.
 
-Two years back, in KDD 2014, we described EMBERS~\cite{kdd:beating-the-news}, a deployed anticipatory
+Two years ago, in KDD 2014, we described EMBERS~\cite{kdd:beating-the-news}, a deployed anticipatory
 intelligence system~\cite{bigdata-andy-doyle-embers-paper} that forecasts significant
 societal events (e.g., civil unrest
 events such as protests, strikes, and `occupy' events) using a large set of open source
 indicators such as news, blogs, tweets, food prices, currency rates, and other public
 data. The EMBERS system has been running continuously 24x7 for nearly 4 years at this point
 and our goal in this paper is to present the discoveries it has enabled,
-correct as well as missed
-forecasts, and lessons learnt from participating in a forecasting tournament including
+both correct as well as missed
+forecasts, and lessons learned from participating in a forecasting tournament including
 our perspectives on the limits of forecasting and ethical considerations. In
 particular, we shed insight into the value proposition to an analyst and how EMBERS forecasts
 are communicated to its end-users.
 
 The development of EMBERS is supported by the Intelligence Advanced Research Projects
 Activity (IARPA) Open Source Indicators (OSI) program.
-EMBERS forecasts are scored against the GSR (Gold Standard Report), a monthly catalog of
+EMBERS forecasts are scored against the Gold Standard Report (GSR), a monthly catalog of
 events as reported in newspapers of record in the above countries. The GSR is compiled by MITRE corporation
 using human analysts.
 EMBERS currently focuses on multiple regions of the world but for the purpose of this paper
@@ -42,11 +42,11 @@ ways in which analysts utilize EMBERS and the use of {\it automated
 narratives} to help make EMBERS forecasts as useful as possible.
 
 \item In an attempt to demystify the state-of-the-art
-in forecasting and create an open dialogue in the community, we report both successful
+in forecasting and to create an open dialogue in the community, we report both successful
 forecasts of EMBERS as well as events missed by EMBERS. The events not forecast by EMBERS lead us to
-considerations of both limitations of the underlying technology as well as inherent limits to
-forecasting large-scale events.
-\item While social media is often touted as key to event forecasting
+considerations of both the limitations of the underlying technology as well as
+the inherent limits to forecasting large-scale events.
+\item While social media is often touted as the key to event forecasting
 systems such as EMBERS, we present the results of an ablation study to outline
 the performance degradation that ensues if data sources
 such as Twitter and Facebook were to be removed from the forecasting pipeline.
@@ -57,6 +57,6 @@ events, and evaluate the performance of EMBERS in forecasting such
 surprising events.
 \item We describe our current best understanding of the limitations to
 forecasting civil unrest events using technologies like EMBERS and
-also ethical considerations.
+also consider the ethical considerations of the EMBERS technologies.
 \end{enumerate}
 

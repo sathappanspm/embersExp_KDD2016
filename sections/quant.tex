@@ -74,7 +74,7 @@ and precision involve a natural underlying trade-off and the deployment of our f
 engine provided the ability to balance this trade-off to meet IARPA OSI's objectives.
 
 Apart from comparing mean scores another interesting metric is to see
-how many perfect matches (4.0 quality score) is obtained by a
+how many perfect matches (4.0 quality score) are obtained by a
 algorithm.Fig.~\ref{fig:perfect_score} shows the number of alerts issued
 by EMBERS that matched perfectly to an event in the future on a monthly
 basis for 2013.The figure clearly shows that EMBERS makes almost double
@@ -86,28 +86,20 @@ model.
 \subsection{Analyst Evaluation}
 In addition to the quantitative measures above, our experience interacting with analysts (across multiple
 branches of government) demonstrated
-an interesting dichotomy to how analysts use EMBERS alerts. Some analysts preferred to use EMBERS in an
+an interesting dichotomy as to how analysts use EMBERS alerts. Some analysts preferred to use EMBERS in an
 `analytic triage' scenario wherein they could tune EMBERS for high recall so that they would apply their
 traditional measures of filtering and analysis to hone in on forecasts of interest. Other analysts
 instead viewed EMBERS as a data source and preferred to use it in a high precision mode, e.g., wherein they
 were focused on a specific region of the world (e.g., Venezuela) and aimed to investigate a particular
 social science hypothesis (e.g., whether disruptions in global oil markets led to civil unrest).
 To support this dichotomy of users, we implemented a mechanism wherein in addition to generating alerts, EMBERS
-also forecast the expected quality score for each forecast (using machine learning methods trained on
+also forecasted the expected quality score for each forecast (using machine learning methods trained on
 past GSR-alert matches). This expected quality score measure provided a way for analysts to use quality
 directly as a way to tune the system to receive greater or fewer
-alerts.Figure.~\ref{recallVsQS} shows the trade-off between final quality
+alerts.Figure~\ref{recallVsQS} shows the trade-off between final quality
 score and recall when alerts are suppressed based on expected quality.
 As expected we can see that the recall drops and quality increases as the cut-off
 threshold for expected quality is increased.
-
-
-\begin{figure}
-\centering
-\includegraphics[height=0.2\textheight]{figures/cu/recallVsQS.pdf}
-\label{fig:recallvsQS}
-\caption{Recall vs Quality Trade-off}
-\end{figure}
 
 \narenc{Show forecast with comment describing predicted QS.}
 \narenc{Insert quality score tuning curve here.}
@@ -117,7 +109,13 @@ threshold for expected quality is increased.
 \label{fig:perfect_score}
 \end{figure}
 
-
+\begin{figure}
+\centering
+\includegraphics[width=\columnwidth]{figures/cu/recallVsQS.pdf}
+%\includegraphics[height=0.2\textheight]{figures/cu/recallVsQS.pdf}
+\label{fig:recallvsQS}
+\caption{Recall vs Quality Trade-off}
+\end{figure}
 
 \narenc{Insert narrative here.}
 \input{figures/cu/narrative.tex}

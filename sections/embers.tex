@@ -5,7 +5,9 @@ and measures for evaluating its performance. For more details, please
 see~\cite{kdd:beating-the-news}.
 
 Forecasting societal events such as civil unrest has a long tradition in the intelligence analysis and political science
-community. We distinguish between forecasting systems versus event coding systems (that provide
+community. We distinguish between forecasting systems versus event coding
+%adding the extra 'systems' here keeps ICEWS+footnote from moving into margin
+systems (systems that provide
 structured representations of ongoing events reported in newspapers), and focus on the former.
 Early forecasting systems such as ICEWS~\cite{icews} provided very broad coverage in countries but
 were limited by their spatio-temporal resolution (e.g., typically country- and month- level forecasting for
@@ -17,13 +19,14 @@ Task Force)~\cite{pitf} funded by the CIA.
 To the best of our knowledge, only EMBERS provides
 the most specific spatial resolution (city-level) and temporal resolution (daily-level) capability in forecasting.
 
+\pbutler{Should we define EMBERS the very first time we use it?}
 The software architecture of EMBERS (Early Model Based Event Recognition using
-Surrogates) is designed as a loosely coupled, highly distributed pipeline of
-processes connected viz ZeroMQ.  In this manner the system is both highly scalable and fault
+Surrogates) is designed as a loosely coupled, share-nothing, highly distributed pipeline of
+processes connected via ZeroMQ.  In this manner, the system is both highly scalable and fault
 tolerant.  The EMBERS pipeline can loosely be broken up into four stages:
 ingestion, enrichment, modeling, and selection.  In the first stage, ingestion,
 data is collected from a variety of sources and streamed into the following
-stages in real-time.  Enrichment takes the raw data from the ingestion stage
+stages in real-time.  The enrichment stage takes the raw data from the ingestion stage
 and processes it in various ways including natural language processing,
 geocoding, and relative time phrase normalization.  After enrichment, the
 modeling stage feeds the enriched data into the various models that make up
@@ -31,32 +34,33 @@ EMBERS.  Unlike other systems which use single monolithic models to make
 predictions, EMBERS combines the results of several different models to arrive
 at the most accurate forecasts.  Finally, in the selection stage the separate
 alerts from each model are de-duplicated, fused, and selected and finally
-emitted as a full forecast.
-\narenc{Patrick complete this using your own words.}
+emitted as a full forecast for a real world event.
 
-The structure of a civil unrest forecast is shown in
-Figure.~\ref{fig:alert} (left).
-\narenc{Give an example of a forecast here. With arrows.}
 \begin{figure}
 \includegraphics[width=\columnwidth]{figures/cu/alert_vs_gsr.pdf}
 \caption{An example depicting how an alert is scored with respect to the ground truth.}
 \label{fig:alert}
 \end{figure}
-As shown in the figure, a forecast constitutes four fields, corresponding to the when, where, who, and why
+\narenc{Give an example of a forecast here. With arrows.}
+The structure of a civil unrest forecast is shown in
+Figure.~\ref{fig:alert} (left).
+A forecast constitutes four fields, corresponding to the when, where, who, and why
 of the protest. These fields are respectively denoted as the date, location, population, and event type.
 Location is recorded at the city level. Population and event type are fields chosen from a categorical
-set of possibilities.The figure further shows how an alert with all
+set of possibilities.  The figure further shows how an alert with all
 these fields are scored against a GSR event. In the basic scoring
 methodology shown in the Figure.~\ref{fig:alert} each of the four fields
 are weighted uniformly and a total quality score out of 4 is
-obtained.Apart from this each alert also has a lead-time associated with
+obtained.  Apart from this each alert also has a lead-time associated with
 it calculated as shown in Figure.~\ref{fig:leadtime}.
 
 Rather than design one model to integrate all possible data sources, EMBERS adopted a multi-model
 approach to forecasting. Each model utilized a specific (possibly overlapping) set of data sources
 and is tuned for high precision, so that the union of these models can be tuned for high recall.
-A fusion/suppression engine~\cite{andy-scotland-paper} allows a tunable strategy to issue fewer/more
-alerts depending on whether the analyst's objective is higher precision versus recall. The
+A fusion/suppression engine~\cite{andy-scotland-paper} allows a tunable
+strategy to issue more or less
+alerts depending on whether the analyst's objective is to obtain a higher
+precision or recall. The
 underlying models used in EMBERS are: (i) planned protest model~\cite{pp-paper1,pp-paper2},
 (ii) dynamic query expansion~\cite{dqe-plosone}, (iii) volume-based model~\cite{asonam},
 (iv) cascade regression~\cite{anil-plosone}, and (v) a baseline model. The planned protest model,
@@ -68,14 +72,14 @@ For instance, in Venezuela (an economy where the government exercises stringent 
 there were a series of protests in 2014 stemming from the shortage of toilet paper, a novel circumstance
 that was uncovered by DQE. The volume-based model uses a range of data sources, spanning
 social, economic
-and political indicators. It uses classical statistical models (Lasso
+and political indicators. It uses classical statistical models (LASSO
 and hybrid regression models) to forecast civil unrest events using features
-from social media (Twitter, blogs), news sources,
+from social media (Twitter and blogs), news sources,
 political event databases (ICEWS and GDELT~\cite{gdelt}), Tor~\cite{tor} statistics, food prices, and currency
 exchange rates. It aims to provide a multi-source perspective into forecasting by leveraging
-the selective superiorities of different data sources. The cascade regression model
+the selective superiorities of different data sources.  The cascade regression model
 aims to model activity related to organization and mobilization in Twitter~\cite{anil-plosone}.
-Finally, the baseline model uses maximum likelihood
+Finally, the baseline model uses a maximum likelihood
 estimation over the GSR to issue history-based forecasts.
 
 \begin{figure}
@@ -94,7 +98,7 @@ date quality, i.e., the difference between the predicted date and the actual dat
 quality is one of the components to the quality score, the other components being the
 location score, event type score, and population score. Fig.~\ref{otherscores} show how these other
 components are scored between an EMBERS forecast and a GSR record. Given a set of alerts and a set of
-events for a given month, the lead time is used as a constraint to define legal (alert, event) pairs so that
+GSR events for a given month, the lead time is used as a constraint to define legal (alert, event) pairs so that
 we can construct a bipartite matching to optimize the best quality score. From this bipartite matching,
 measures of precision and recall can be derived, i.e., by assessing the number of (un)matched events or
 alerts. Finally, a confidence score is used to assess the quality of probabilities imputed by EMBERS to its
@@ -102,5 +106,5 @@ forecasts, and measured in terms of the Brier score. For more details, please
 see~\cite{kdd:beating-the-news}.
 
 We now turn to a discussion of specific discoveries enabled by EMBERS, into civil unrest in Latin America, and into
-the complexity of the forecasting enterprise, as a whole.
+the complexity of the forecasting enterprise as a whole.
 
