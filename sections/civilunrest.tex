@@ -92,8 +92,8 @@ to the poor economic policies and widespread corruption. EMBERS was capable of c
 that the reason behind the protests were mainly against government policies with corruption being
 a major theme.The EMBERS models working on twitter were also clearly able to identify some of major
 leaders involved in the protest such as the major opposition leader Leopoldo Lopez.
-Though the events mainly started off from San cristobal it spread widely throughout the country, EMBERS
-captured this spillover very well as shown in Figure~\ref{fig:venezuelaMap}.The
+Though the events mainly started off from San Cristobal it spread widely throughout the country, EMBERS
+captured this spillover very well as shown in Figure~\ref{fig:venezuelaMap}.
 Figure~\ref{fig:venezuelaMarch14}
 shows how EMBERS closely forecast the spike in the number of events  during this period.
 %Over the next
@@ -103,12 +103,6 @@ shows how EMBERS closely forecast the spike in the number of events  during this
 %Figure~\ref{fig:venezuelaMap}.
 %The protests were peaceful with a majority of
 %the protesters demanding the president Nicolas Maduro to step down.
-\begin{figure}[H]
-\centering
-\includegraphics[width=.8\columnwidth]{cu/venezuelaFeb14}
-\caption{EMBERS performance during the Venezuelan student protests (Feb-Mar 2014).}
-\label{fig:venezuelaMarch14}
-\end{figure}
 
 \begin{figure}[H]
 \centering
@@ -116,6 +110,13 @@ shows how EMBERS closely forecast the spike in the number of events  during this
 \caption{Geographical spread of protests (and forecasts) during
 Venezuelan student protests (Feb-Mar 2014).}
 \label{fig:venezuelaMap}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=.8\columnwidth]{cu/venezuelaFeb14}
+\caption{EMBERS performance during the Venezuelan student protests (Feb-Mar 2014).}
+\label{fig:venezuelaMarch14}
 \end{figure}
 
 \subsubsection*{Mexico Protests (Oct 2014)}
@@ -214,31 +215,31 @@ geocoding and relative time phrase normalization (temporal tagging). During earl
 EMBERS had moved to the Heideltime~\cite{heideltime} temporal
 tagger from the previously used TIMEN~\cite{timen} temporal tagger due to
 Heideltime's support for more languages and an active development cycle as
-opposed to TIMEN. 
+opposed to TIMEN.
 Heideltime had no support for Portuguese (the primary
 language used in Brazil) and the EMBERS software development team had extended Heideltime to
 support Portuguese by translating the underlying
 resources for Spanish to Portuguese. As we learnt subsequently,
 the simple translation of rules from Spanish to Portuguese
 was not sufficient and this affected the recall of one of the key models
-for Brazil, viz. the planned protest model. Fig.~\ref{fig:heideltime} shows an example of a portuguese
-text processed by spanish translated heideltime rules versus the improved heideltime version. 
+for Brazil, viz. the planned protest model. Figure~\ref{fig:heideltime} shows an example of a Portuguese
+text processed by Spanish translated heideltime rules versus the improved heideltime version.
 Since the planned protest model relies
 almost exclusively on the quality of information (specifically, date) extraction from text,
 its performance significantly deteriorated. This was subsequently corrected for the future.
+
+
+\begin{figure}
+\centering
+\includegraphics[width=.8\columnwidth]{cu/brazilMarch15}
+\caption{Brazil 2015 Protests}
+\label{fig:brazilSpring}
+\end{figure}
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{cu/heideltime}
 \caption{Example showing the improvements after heideltime improvement}
 \label{fig:heideltime}
-\end{figure}
-
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=.8\columnwidth]{cu/brazilMarch15}
-\caption{Brazil 2015 Protests}
-\label{fig:brazilSpring}
 \end{figure}
 
 \subsubsection{\it Mexico Protests (Dec 2014)}
@@ -267,14 +268,14 @@ we should not have any excuse for. Point them to look at the limitations section
 Different data sources provide different values. It is important we understand the
 value of a data source in order to make use of the data to its full potential.In this section
 we talk about ablation testing in EMBERS where the value added to forecasting performance by traditional media
-sources like news, blogs etc., are compared to that provided by the social media sources. Table.~\ref{tb:ablation_twitter}
+sources like news, blogs etc., are compared to that provided by the social media sources. Table~\ref{tb:ablation_twitter}
  shows the percentage difference in the performance metrics namely quality score, lead-time, precision and recall when only one
 kind of source (traditional media or social media) is used with respect to the performance metrics when both sources are used.
 The table clearly shows that social media sources are mainly necessary in achieving high recall but is not that useful to achieve high
 lead times for which the traditional media sources are required. This behaviour is expected as we social media is the place where the daily chatter
 takes place while most of the official announcements, government policies  and calls for protests etc.,are released in the traditional media.
-Mainly, the table ~\ref{tb:ablation_twitter} makes it evident that to build a successful forecasting system we need a good mix
-of both traditional and social media sources.Figure~\ref{fig:ablation} shows a snapshot of the EMBERS Ablation visualizer. The visualizer provides an
+Mainly, Table~\ref{tb:ablation_twitter} makes it evident that to build a successful forecasting system we need a good mix
+of both traditional and social media sources.  Figure~\ref{fig:ablation} shows a snapshot of the EMBERS Ablation visualizer. The visualizer provides an
 analyst with the capability to remove or add any available and see what difference it causes to the alerts produced.
 
 \begin{figure}
