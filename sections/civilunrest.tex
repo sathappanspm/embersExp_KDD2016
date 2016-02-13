@@ -118,6 +118,7 @@ Venezuelan student protests (Feb-Mar 2014).}
 \end{figure}
 
 \subsubsection*{Mexico Protests (Oct 2014)}
+\label{sec:mexico}
 \narenc{First, write one para about what these protests are about.}
 Late September 2014, there were some peaceful protests by students from Ayotzinapa
 in Mexico against discriminatory hiring practices for teachers. During this protest,
@@ -202,12 +203,12 @@ EMBERS failed to forecast accurately, along with a discussion of underlying
 reasons.
 
 \subsubsection{Brazilian Protests (March 2015)}
-\narenc{First, explain what these protests are about.}
-The protests were mainly targeted against president Dilma Rousseff due to
-increasing corruption.
-While EMBERS accurately predicted that there
-will be an increase in the rate of events it failed to
-capture the true counts.
+The begining of 2015 saw a series of protests in Brazil demanding the 
+removal of president Dilma Roussef amidst much furore against the increasing corruption in the country.
+The protest magnitude increased significantly due to the revelations that many politicians belonging
+to the ruling party accepted bribes from the state run energy company Petrobas. The protests saw huge participation from 
+the general population, with protestors generally estimated to be around a million. EMBERS, as shown in Fig.~\ref{fig:brazilSpring},
+picked up the onset of events but failed to capture the sudden rise in the number of events.
 
 During this period there was a significant architectural change in the
 EMBERS processing pipeline. EMBERS had moved to the Heideltime temporal
@@ -241,17 +242,23 @@ its performance significantly deteriorated. This was subsequently corrected for 
 \end{figure}
 
 \subsubsection{\it Mexico Protests (Dec 2014)}
-During Dec 2014, people turned out in huge numbers in different cities of Mexico demanding
-President Pena Nieto`s ouster. \narenc{Say more.}
-EMBERS missed the huge single day spike on December 1st when
-EMBERS predicted nationwide events for December 1st but failed to
-capture the its spread.  \narenc{This previous sentence does not parse.
+The December 2014 were a continuation of the series of protests that began in October 2014
+as described in Section.~\ref{sec:mexico}. People turned out in huge numbers in different cities of Mexico demanding
+President Pena Nieto`s ouster owing to the manner in which the case of the 43 missing students were handled.
+The protests were largely peaceful except for a few cases where vehicles were torched and windows and office equipment
+were broken. 
+
+EMBERS missed the huge single day spike on December 1st. Though having predicted a nationwide event for 
+December 1, EMBERS failed to capture the individual cities where the protest were carried out and also was unable
+to pick the magnitude.  \narenc{This previous sentence does not parse.
 Did it miss the spike, or did it predict it correctly? Fix it.}
-December 1st was picked by the protesters due to
+On manual analysis of the event, it was foud that the date, December 1,  was picked by the protesters due to
 its historical significance. This was the day when President Pena Nieto was sworn
 in as President in 2012 amidst much controversy and opposition from
-many specific constituent groups. A specific reason why EMBERS missed this forecast
-was its inability to extract dates mentioned using Twitter lingo such as {\bf \#1Dmx}.
+many specific constituent groups. The manual analysis also led to the understanding of how
+special dates were mentioned by twitterati {\bf \#1Dmx}. Dates mentioned like this were totally unrecognised by the EMBERS
+system and could have been one of the main reasons for EMBERS not being able to capture the peak on December 1st despite its
+historical significance.
 
 \subsubsection{Brazilian Spring Onset}
 \narenc{Refer back to the old Brazilian Spring figure. Say as mentioned earlier, while we forecast
