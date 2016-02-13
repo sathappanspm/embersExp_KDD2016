@@ -118,7 +118,7 @@ Venezuelan student protests (Feb-Mar 2014).}
 \end{figure}
 
 \subsubsection*{Mexico Protests (Oct 2014)}
-\narenc{First, write one para about what these protests are about.}
+\label{sec:mexico}
 Late September 2014, there were some peaceful protests by students from Ayotzinapa
 in Mexico against discriminatory hiring practices for teachers. During this protest,
 police opened fire on the students killing around three and about 43 went missing. This poor
@@ -133,10 +133,6 @@ Figure.~\ref{fig:mexicoTimeline} provides a timeline of GSR events and
 EMBERS alerts for Mexico during this period. This figure provides a detailed
 comparison of the continuous stream of alerts produced by EMBERS during this period with how
 the actual events unfurled in the real world.
-
-
-\narenc{Say more about this timeline,
-a few more sentences.}
 
 \begin{figure}[H]
 \centering
@@ -154,7 +150,6 @@ between counts of GSR events and EMBERS alerts on a daily basis.}
 \end{figure}
 
 \subsubsection*{Colombia Protests (Dec 2014 to March 2015}
-\narenc{First one paragraph about what these protests are.}
 Colombia witnessed two different significant protests during this period, one during late december 2014 
 and the other during February 2015. Towards the end of 2014 the colombian government were on the process
 of moving forward with peace negotiations to end 50 years of conflict with the Revolutionary Armed Forces 
@@ -173,12 +168,11 @@ February 11-12.
 \begin{figure}[H]
 \centering
 \includegraphics[width=.8\columnwidth]{cu/colombiaDec15}
-\caption{Colombia Protests \narenc{rewrite caption similar to previous ones.}}
+\caption{Embers Performance during the Colombia Protests (Dec.2014 to Mar.2015)}
 \label{fig:colombiaDec14}
 \end{figure}
 
 \subsubsection*{Paraguay Protests (February 2015)}
-\narenc{First describe what these protests are about.}
 The February 2015 protests in Paraguay were mainly carried out by peasants
 against the actions of the President Horacio Cartes.The protests were carried out after 
 president Horacio's public revelation that he had opened two private swiss bank accounts.
@@ -192,7 +186,7 @@ February 2015 as shown in Fig.~\ref{fig:paraguay15}.
 \begin{figure}[H]
 \centering
 \includegraphics[width=.8\columnwidth]{cu/paraguayFeb15}
-\caption{Paraguay Protests \narenc{rewrite caption similar to previous ones.}}
+\caption{EMBERS performance during Paraguay Protests (Feb. 2015)}
 \label{fig:paraguay15}
 \end{figure}
 
@@ -202,12 +196,12 @@ EMBERS failed to forecast accurately, along with a discussion of underlying
 reasons.
 
 \subsubsection{Brazilian Protests (March 2015)}
-\narenc{First, explain what these protests are about.}
-The protests were mainly targeted against president Dilma Rousseff due to
-increasing corruption.
-While EMBERS accurately predicted that there
-will be an increase in the rate of events it failed to
-capture the true counts.
+The begining of 2015 saw a series of protests in Brazil demanding the 
+removal of president Dilma Roussef amidst much furore against the increasing corruption in the country.
+The protest magnitude increased significantly due to the revelations that many politicians belonging
+to the ruling party accepted bribes from the state run energy company Petrobas. The protests saw huge participation from 
+the general population, with protestors generally estimated to be around a million. EMBERS, as shown in Fig.~\ref{fig:brazilSpring},
+picked up the onset of events but failed to capture the sudden rise in the number of events.
 
 During this period there was a significant architectural change in the
 EMBERS processing pipeline. EMBERS had moved to the Heideltime temporal
@@ -241,17 +235,21 @@ its performance significantly deteriorated. This was subsequently corrected for 
 \end{figure}
 
 \subsubsection{\it Mexico Protests (Dec 2014)}
-During Dec 2014, people turned out in huge numbers in different cities of Mexico demanding
-President Pena Nieto`s ouster. \narenc{Say more.}
-EMBERS missed the huge single day spike on December 1st when
-EMBERS predicted nationwide events for December 1st but failed to
-capture the its spread.  \narenc{This previous sentence does not parse.
-Did it miss the spike, or did it predict it correctly? Fix it.}
-December 1st was picked by the protesters due to
+The December 2014 were a continuation of the series of protests that began in October 2014
+as described in Section.~\ref{sec:mexico}. People turned out in huge numbers in different cities of Mexico demanding
+President Pena Nieto`s ouster owing to the manner in which the case of the 43 missing students were handled.
+The protests were largely peaceful except for a few cases where vehicles were torched and windows and office equipment
+were broken. 
+
+EMBERS missed the huge single day spike on December 1st. Though having predicted a nationwide event for 
+December 1, EMBERS failed to capture the individual cities where the protest were carried out and also was unable
+to pick the magnitude. On manual analysis of the event, it was foud that the date, December 1,  was picked by the protesters due to
 its historical significance. This was the day when President Pena Nieto was sworn
 in as President in 2012 amidst much controversy and opposition from
-many specific constituent groups. A specific reason why EMBERS missed this forecast
-was its inability to extract dates mentioned using Twitter lingo such as {\bf \#1Dmx}.
+many specific constituent groups. The manual analysis also led to the understanding of how
+special dates were mentioned by twitterati {\bf \#1Dmx}. Dates mentioned like this were totally unrecognised by the EMBERS
+system and could have been one of the main reasons for EMBERS not being able to capture the peak on December 1st despite its
+historical significance.
 
 \subsubsection{Brazilian Spring Onset}
 \narenc{Refer back to the old Brazilian Spring figure. Say as mentioned earlier, while we forecast
@@ -259,15 +257,31 @@ the duration and details of it, we missed the onset of it. Say some more about i
 we should not have any excuse for. Point them to look at the limitations section.}
 
 \section{Ablation Testing}
-\narenc{Put the Twitter removal figure here. and discuss.}
+Different data sources provide different values. It is important we understand the 
+value of a data source inorder to make use of the data to its full potential.In this section
+we talk about ablation testing in EMBERS where the value added to forecasting performance by traditional media
+sources like news, blogs etc., are compared to that provided by the social media sources. Table.~\ref{tb:ablation_twitter}
+ shows the percentage difference in the performance metrics namely quality score, lead-time, precision and recall when only one
+kind of source (traditional media or social media) is used with respect to the performance metrics when both sources are used.
+The table clearly shows that social media sources are mainly necessary in achieving high recall but is not that useful to achieve high
+leadtimes for which the traditional media sources are required. This behaviour is expected as we social media is the place where the daily chatter
+takes place while most of the official announcements, government policies  and calls for protests etc.,are released in the traditional media.
+Mainly, the table ~\ref{tb:ablation_twitter} makes it evident that to build a successful forecasting system we need a good mix
+of both traditional and social media sources.Fig.~\ref{fig:ablation} shows a snapshot of the EMBERS Ablation visualizer. The visualizer provides an
+analyst with the capability to remove or add any available and see what difference it causes to the alerts produced.
+
 \begin{figure}
 \includegraphics[width=\columnwidth]{figures/cu/ablation.pdf}
 \caption{EMBERS visualization on Ablation testing}
 \label{fig:ablation}
 \end{figure}
-\section{Forecasting Surprising Events}
+
 
 \input{tables/ablation_twitter.tex}
+
+
+\section{Forecasting Surprising Events}
+
 The GSR contains a mix of everyday, mundane, protests as well as surprising events such as the Brazilian Spring.
 We aimed to ascertain the relative ease of forecasting each class of events
 with respect to a simple baserate model.
