@@ -20,7 +20,6 @@ Task Force)~\cite{pitf} funded by the CIA.
 To the best of our knowledge, only EMBERS provides
 the most specific spatial resolution (city-level) and temporal resolution (daily-level) capability in forecasting.
 
-\pbutler{Should we define EMBERS the very first time we use it?}
 The software architecture of EMBERS (Early Model Based Event Recognition using
 Surrogates) is designed as a loosely coupled, share-nothing, highly distributed pipeline of
 processes connected via ZeroMQ.  In this manner, the system is both highly scalable and fault
@@ -98,7 +97,7 @@ one of the primary measures of EMBERS performance is lead time, the number of da
 date quality, i.e., the difference between the predicted date and the actual date of the event. The date
 quality is one of the components to the quality score, the other components being the
 location score, event type score, and population score.
-Figure~\ref{fig:alert} \pbutler{this is the correct fig or are we missing a fig?}
+Figure~\ref{fig:alert} 
 shows how these other
 components are scored between an EMBERS forecast and a GSR record. Given a set of alerts and a set of
 GSR events for a given month, the lead time is used as a constraint to define legal (alert, event) pairs so that

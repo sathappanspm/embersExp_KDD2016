@@ -223,12 +223,10 @@ support Portuguese by translating the underlying
 resources for Spanish to Portuguese. As we learnt subsequently,
 the simple translation of rules from Spanish to Portuguese
 was not sufficient and this affected the recall of one of the key models
-for Brazil, viz. the planned protest model. Figure~\ref{fig:heideltime} shows an example of a Portuguese
-text processed by Spanish translated heideltime rules versus the improved heideltime version.
+for Brazil, viz. the planned protest model. 
 Since the planned protest model relies
 almost exclusively on the quality of information (specifically, date) extraction from text,
 its performance significantly deteriorated. This was subsequently corrected for the future.
-
 
 \begin{figure}
 \centering
@@ -237,11 +235,13 @@ its performance significantly deteriorated. This was subsequently corrected for 
 \label{fig:brazilSpring}
 \end{figure}
 
+\iffalse
 \begin{figure}
 \includegraphics[width=\columnwidth]{cu/heideltime}
 \caption{Example showing the improvements after heideltime improvement}
 \label{fig:heideltime}
 \end{figure}
+\fi
 
 \subsubsection{\it Mexico Protests (Dec 2014)}
 The December 2014 were a continuation of the series of protests that began in October 2014
@@ -262,28 +262,38 @@ historical significance.
 
 \subsubsection{Brazilian Spring Onset}
 The EMBERS forecasts during the 2013 Brazilian Spring as shown in Fig.~\ref{fig:brazilJune13} was able to capture
-the peak pretty well but was a bit delayed in picking up the increase in number of events.
+the peak but as can be seen the system was unable to capture the initial
+onset.  See Section~\ref{limitations} for a detailed discussion of
+the limits of forecasting.
+\iffalse
 The EMBERS system was not able to capture the initial onset because all EMBERS models were only trained mainly on the
 Spanish language which was the most spoken language in the Latin America region. Quick re-training of the models
 for portuguese, allowed EMBERS to capture the peak accurately. 
 \narenc{Refer back to the old Brazilian Spring figure. Say as mentioned earlier, while we forecast
 the duration and details of it, we missed the onset of it. Say some more about it. This is an event that
 we should not have any excuse for. Point them to look at the limitations section.}
+\fi
 
 \section{Ablation Testing}
 \label{sec:ablation}
-Different data sources provide different values. It is important we understand the
-value of a data source in order to make use of the data to its full potential.In this section
-we talk about ablation testing in EMBERS where the value added to forecasting performance by traditional media
-sources like news, blogs etc., are compared to that provided by the social media sources. Table~\ref{tb:ablation_twitter}
- shows the percentage difference in the performance metrics namely quality score, lead-time, precision and recall when only one
-kind of source (traditional media or social media) is used with respect to the performance metrics when both sources are used.
-The table clearly shows that social media sources are mainly necessary in achieving high recall but is not that useful to achieve high
-lead times for which the traditional media sources are required. This behaviour is expected as we social media is the place where the daily chatter
-takes place while most of the official announcements, government policies  and calls for protests etc.,are released in the traditional media.
+Different data sources provide different value to
+the forecasting enterprise. It is important we understand the
+value of a data source w.r.t. its forecasting potential.
+In this section we describe ablation testing in EMBERS where the value added to forecasting performance by traditional media
+sources like news and
+blogs are compared to that provided by the social media sources. 
+Table~\ref{tb:ablation_twitter} shows the percentage difference in the performance metrics namely quality score, lead-time, precision and recall when only one
+kind of source (traditional media or social media) is used with respect to the performance metrics when compared against the scenario when
+both sources are used.
+The table clearly shows that social media sources are mainly necessary in achieving high recall but not that useful in achieving high
+lead times for which the traditional media sources are required. This 
+behavior is expected as social media is where daily chatter
+occurs whereas signs of organization and calls for protest often
+happen on traditional meadia.
 Mainly, Table~\ref{tb:ablation_twitter} makes it evident that to build a successful forecasting system we need a good mix
-of both traditional and social media sources.  Figure~\ref{fig:ablation} shows a snapshot of the EMBERS Ablation visualizer. The visualizer provides an
-analyst with the capability to remove or add any available and see what difference it causes to the alerts produced.
+of both traditional and social media sources.  Figure~\ref{fig:ablation} shows a snapshot of the EMBERS ablation visualizer. The visualizer provides an
+analyst with the capability to selectively
+remove data sources and assess the differences in final alerts.
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{figures/cu/ablation.pdf}
@@ -302,7 +312,6 @@ We aimed to ascertain the relative ease of forecasting each class of events
 with respect to a simple baserate model.
 
 The baserate model generates alerts using the rate of occurrence of events in the past three months.
-\narenc{Talk about Ecuador slides.}
 
 To define surprising events,
 we employed a maximum entropy approach. For this purpose, each event is assumed
