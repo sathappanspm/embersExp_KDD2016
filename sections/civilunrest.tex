@@ -257,15 +257,31 @@ the duration and details of it, we missed the onset of it. Say some more about i
 we should not have any excuse for. Point them to look at the limitations section.}
 
 \section{Ablation Testing}
-\narenc{Put the Twitter removal figure here. and discuss.}
+Different data sources provide different values. It is important we understand the 
+value of a data source inorder to make use of the data to its full potential.In this section
+we talk about ablation testing in EMBERS where the value added to forecasting performance by traditional media
+sources like news, blogs etc., are compared to that provided by the social media sources. Table.~\ref{tb:ablation_twitter}
+ shows the percentage difference in the performance metrics namely quality score, lead-time, precision and recall when only one
+kind of source (traditional media or social media) is used with respect to the performance metrics when both sources are used.
+The table clearly shows that social media sources are mainly necessary in achieving high recall but is not that useful to achieve high
+leadtimes for which the traditional media sources are required. This behaviour is expected as we social media is the place where the daily chatter
+takes place while most of the official announcements, government policies  and calls for protests etc.,are released in the traditional media.
+Mainly, the table ~\ref{tb:ablation_twitter} makes it evident that to build a successful forecasting system we need a good mix
+of both traditional and social media sources.Fig.~\ref{fig:ablation} shows a snapshot of the EMBERS Ablation visualizer. The visualizer provides an
+analyst with the capability to remove or add any available and see what difference it causes to the alerts produced.
+
 \begin{figure}
 \includegraphics[width=\columnwidth]{figures/cu/ablation.pdf}
 \caption{EMBERS visualization on Ablation testing}
 \label{fig:ablation}
 \end{figure}
-\section{Forecasting Surprising Events}
+
 
 \input{tables/ablation_twitter.tex}
+
+
+\section{Forecasting Surprising Events}
+
 The GSR contains a mix of everyday, mundane, protests as well as surprising events such as the Brazilian Spring.
 We aimed to ascertain the relative ease of forecasting each class of events
 with respect to a simple baserate model.
