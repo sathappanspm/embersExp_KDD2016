@@ -208,19 +208,22 @@ million. EMBERS, as shown in Figure~\ref{fig:brazilSpring},
 picked up the onset of events but failed to capture the sudden rise in the number of events.
 
 During this period there was a significant architectural change in the
-EMBERS processing pipeline. EMBERS had moved to the Heideltime temporal
-tagger from the previously used TIMEN temporal tagger due to
+EMBERS processing pipeline. As mentioned in Section.~\ref{sec:background} the
+EMBERS system enrichment pipeline consists of the following: natural language processing,
+geocoding and relative time phrase normalization (temporal tagging). During early 2015
+EMBERS had moved to the Heideltime~\cite{heideltime} temporal
+tagger from the previously used TIMEN~\cite{timen} temporal tagger due to
 Heideltime's support for more languages and an active development cycle as
-opposed to TIMEN. \narenc{Find some way to mention temporal tagging somewhere
-in the background section, so it doesn't appear so sudden here.}
-\narenc{Also give citations for TIMEN and Heideltime.}
+opposed to TIMEN. 
 Heideltime had no support for Portuguese (the primary
 language used in Brazil) and the EMBERS software development team had extended Heideltime to
 support Portuguese by translating the underlying
 resources for Spanish to Portuguese. As we learnt subsequently,
 the simple translation of rules from Spanish to Portuguese
 was not sufficient and this affected the recall of one of the key models
-for Brazil, viz. the planned protest model. Since the planned protest model relies
+for Brazil, viz. the planned protest model. Fig.~\ref{fig:heideltime} shows an example of a portuguese
+text processed by spanish translated heideltime rules versus the improved heideltime version. 
+Since the planned protest model relies
 almost exclusively on the quality of information (specifically, date) extraction from text,
 its performance significantly deteriorated. This was subsequently corrected for the future.
 
