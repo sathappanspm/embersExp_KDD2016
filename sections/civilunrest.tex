@@ -321,27 +321,27 @@ as the cube shown in Figure~\ref{fig:maxent_model}. We infer a maximum entropy d
 induced by the cube using iterative proportional fitting~\cite{bishop2007discrete}, as shown in \narenc{Put the algo below in some nice box.}
 \input{sections/maxent_algo.tex}
 
-\begin{enumerate}
-\item Once the marginals are identified, elementary cells are replaced by 1; $\widehat{m}^{(0)}_{ijk}=1$
-\item After initialization, the following three-step iterative cycle is performed till a satisfactory stopping goal is achieved:
-$$\widehat{m}^{(c+1)}_{ijk} = \widehat{m}^{(c)}_{ijk}\frac{x_{ij+}}{\widehat{m}^{(c)}_{ij+}}$$
-$$\widehat{m}^{(c+2)}_{ijk} = \widehat{m}^{(c+1)}_{ijk}\frac{x_{i+k}}{\widehat{m}^{(c+1)}_{i+k}}$$
-$$\widehat{m}^{(c+3)}_{ijk} = \widehat{m}^{(c+2)}_{ijk}\frac{x_{+jk}}{\widehat{m}^{(c)}_{+jk}}$$
-where $c$ refers to iteration cycle and `+' refers to summation over a dimension.
-\item The procedure stops if either the desired convergence of $\delta < 0.0001$ is achieved or the maximum number of iterations are reached.
-\end{enumerate}
-
-\narenc{The procedure above makes no sense - the symbols are not defined at all.}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=.7\columnwidth]{cu/maxent_model}
-\caption{Modeling the maxent distribution of civil unrest counts to identify surprising events.}
-\label{fig:maxent_model}
-\end{figure}
+%\begin{enumerate}
+%\item Once the marginals are identified, elementary cells are replaced by 1; $\widehat{m}^{(0)}_{ijk}=1$
+%\item After initialization, the following three-step iterative cycle is performed till a satisfactory stopping goal is achieved:
+%$$\widehat{m}^{(c+1)}_{ijk} = \widehat{m}^{(c)}_{ijk}\frac{x_{ij+}}{\widehat{m}^{(c)}_{ij+}}$$
+%$$\widehat{m}^{(c+2)}_{ijk} = \widehat{m}^{(c+1)}_{ijk}\frac{x_{i+k}}{\widehat{m}^{(c+1)}_{i+k}}$$
+%$$\widehat{m}^{(c+3)}_{ijk} = \widehat{m}^{(c+2)}_{ijk}\frac{x_{+jk}}{\widehat{m}^{(c)}_{+jk}}$$
+%where $c$ refers to iteration cycle and `+' refers to summation over a dimension.
+%\item The procedure stops if either the desired convergence of $\delta < 0.0001$ is achieved or the maximum number of iterations are reached.
+%\end{enumerate}
+%
+%\narenc{The procedure above makes no sense - the symbols are not defined at all.}
+%
+%\begin{figure}[H]
+%\centering
+%\includegraphics[width=.7\columnwidth]{cu/maxent_model}
+%\caption{Modeling the maxent distribution of civil unrest counts to identify surprising events.}
+%\label{fig:maxent_model}
+%\end{figure}
 
 Every month, events from the last three months of the
-GSR is used to populate the underlying cube of counts and the iterative proportional fitting procedure is
+GSR is used to populate the underlying cube of counts and the iterative proportional fitting procedure in Algorithm.~\ref{algo:maxent} is
 used to estimate the maxent values for each cell. The resultant sample counts are then scaled to
 match the observed number of GSR events in the current month. The cell-wise difference between the inferred
 maxent distribution and the observed GSR is computed and all cells with significance greater than five standard
