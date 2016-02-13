@@ -1,7 +1,7 @@
 main: embersExp_kdd16.pdf
 
 
-embersExp_kdd16.pdf: embersExp_kdd16.tex references.bib $(wildcard sections/*.tex) $(wildcard figures/*/*.pdf)
+embersExp_kdd16.pdf: embersExp_kdd16.tex references.bib $(wildcard sections/*.tex) $(wildcard figures/*/*.pdf) references.bib
 	pdflatex embersExp_kdd16
 	bibtex embersExp_kdd16
 	pdflatex embersExp_kdd16
