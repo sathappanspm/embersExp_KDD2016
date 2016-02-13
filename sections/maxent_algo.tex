@@ -11,8 +11,8 @@
        $m_{ijk}$ represents the maximum likelihood estimate for a given cell.
 
 \State Initialize $m_{i,j,k}=1 \forall i,j,k$
-\For {$c \in \{0,MAX_ITERATIONS\}$}
-\For {$ijk \forall \textsc{<Event-Type, Population, Country>}$}
+\For {$c \in \{0,MAX\_ITERATIONS\}$}
+\For {$i,j,k \forall \textsc{<Event-Type, Population, Country>}$}
 \State $\hat{m}^{c+1} = {\hat{m}^c}_{ijk}*\frac{x_{ij+}}{{\hat{m}^c}_{ij+}} $
 
 \State $\hat{m}^{c+2} = {\hat{m}^{c+1}}_{ijk}*\frac{x_{i+k}}{{\hat{m}^c}_{i+k}} $
@@ -36,5 +36,4 @@
 \end{algorithmic}
 
 \label{algo:maxent}
-
 \end{algorithm}

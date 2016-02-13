@@ -21,7 +21,7 @@ the spatial spread in the events, in addition to forecasting that this event
 will span the broad Brazilian general population (as opposed to being confined to
 specific sectors).
 
-\begin{figure}[H]
+\begin{figure} %[H]
 \centering
 \includegraphics[width=.8\columnwidth]{cu/brazilJune13}
 \caption{EMBERS performance during the Brazilian Spring (June 2013.)}
@@ -44,7 +44,7 @@ EMBERS was able to capture such discussions on Twitter
 (see Figure~\ref{fig:brazilJune13_wordCloud}), and tracked their evolution as events
 unfolded through June.
 
-\begin{figure}[H]
+\begin{figure} %[H]
 \centering
 \includegraphics[width=.8\columnwidth]{cu/brazilJune13_wordCloud}
 \caption{Word cloud representing tweets identified by EMBERS dynamic query expansion model.}
@@ -70,7 +70,7 @@ were plagued by mass protests as well; EMBERS predicted these events and
 submitted multiple alerts for Rio for the 28th and 29th June and one for
 Salvador for 29th June.
 
-\begin{figure}[H]
+\begin{figure} %[H]
 \centering
 \includegraphics[height=.6\columnwidth]{cu/brazilJune13_map}
 \caption{Geographic overlap of protest events (from the GSR) and EMBERS
@@ -105,7 +105,7 @@ shows how EMBERS closely forecast the spike in the number of events  during this
 %The protests were peaceful with a majority of
 %the protesters demanding the president Nicolas Maduro to step down.
 
-\begin{figure}[H]
+\begin{figure} %[H]
 \centering
 \includegraphics[width=.6\columnwidth]{cu/venezuelaMap}
 \caption{Geographical spread of protests (and forecasts) during
@@ -113,7 +113,7 @@ Venezuelan student protests (Feb-Mar 2014).}
 \label{fig:venezuelaMap}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure} %[H]
 \centering
 \includegraphics[width=.8\columnwidth]{cu/venezuelaFeb14}
 \caption{EMBERS performance during the Venezuelan student protests (Feb-Mar 2014).}
@@ -138,7 +138,7 @@ EMBERS alerts for Mexico during this period. This figure provides a detailed
 comparison of the continuous stream of alerts produced by EMBERS during this period with how
 the actual events unfurled in the real world.
 
-\begin{figure}[H]
+\begin{figure} %[H]
 \centering
 \includegraphics[width=.8\columnwidth]{cu/mexicoOct14}
 \caption{EMBERS performance during Mexico protests (Oct 2014).}
@@ -147,7 +147,7 @@ the actual events unfurled in the real world.
 
 \begin{figure*}
 \centering
-\includegraphics[width=\textwidth]{cu/mx_timeline}
+\includegraphics[width=.8\textwidth]{cu/mx_timeline}
 \caption{Timeline of Mexico protests, showing the correspondence
 between counts of GSR events and EMBERS alerts on a daily basis.}
 \label{fig:mexicoTimeline}
@@ -170,7 +170,7 @@ February 11-12.
 %The increase in protest counts during Feb 2015 was
 %caused by a truckers' strike against fuel price increases.
 
-\begin{figure}[H]
+\begin{figure} %[H]
 \centering
 \includegraphics[width=.8\columnwidth]{cu/colombiaDec15}
 \caption{Embers Performance during the Colombia Protests (Dec.2014 to Mar.2015)}
@@ -188,7 +188,7 @@ against the introduction of the new public-private partnership law.
 EMBERS forecast the uptick in number of protest events in Paraguay during mid
 February 2015 as shown in Figure~\ref{fig:paraguay15}.
 
-\begin{figure}[H]
+\begin{figure} %[H]
 \centering
 \includegraphics[width=.8\columnwidth]{cu/paraguayFeb15}
 \caption{EMBERS performance during Paraguay Protests (Feb. 2015)}
@@ -223,7 +223,7 @@ support Portuguese by translating the underlying
 resources for Spanish to Portuguese. As we learnt subsequently,
 the simple translation of rules from Spanish to Portuguese
 was not sufficient and this affected the recall of one of the key models
-for Brazil, viz. the planned protest model. 
+for Brazil, viz. the planned protest model.
 Since the planned protest model relies
 almost exclusively on the quality of information (specifically, date) extraction from text,
 its performance significantly deteriorated. This was subsequently corrected for the future.
@@ -268,7 +268,7 @@ the limits of forecasting.
 \iffalse
 The EMBERS system was not able to capture the initial onset because all EMBERS models were only trained mainly on the
 Spanish language which was the most spoken language in the Latin America region. Quick re-training of the models
-for portuguese, allowed EMBERS to capture the peak accurately. 
+for portuguese, allowed EMBERS to capture the peak accurately.
 \narenc{Refer back to the old Brazilian Spring figure. Say as mentioned earlier, while we forecast
 the duration and details of it, we missed the onset of it. Say some more about it. This is an event that
 we should not have any excuse for. Point them to look at the limitations section.}
@@ -281,12 +281,12 @@ the forecasting enterprise. It is important we understand the
 value of a data source w.r.t. its forecasting potential.
 In this section we describe ablation testing in EMBERS where the value added to forecasting performance by traditional media
 sources like news and
-blogs are compared to that provided by the social media sources. 
+blogs are compared to that provided by the social media sources.
 Table~\ref{tb:ablation_twitter} shows the percentage difference in the performance metrics namely quality score, lead-time, precision and recall when only one
 kind of source (traditional media or social media) is used with respect to the performance metrics when compared against the scenario when
 both sources are used.
 The table clearly shows that social media sources are mainly necessary in achieving high recall but not that useful in achieving high
-lead times for which the traditional media sources are required. This 
+lead times for which the traditional media sources are required. This
 behavior is expected as social media is where daily chatter
 occurs whereas signs of organization and calls for protest often
 happen on traditional meadia.
@@ -380,7 +380,7 @@ For all these events, we compare the recall of both EMBERS and baserate model
 in Figure~\ref{fig:maxent}.
 It is clear that EMBERS is able to forecast these significant upticks consistently.
 
-\begin{figure}[H]
+\begin{figure} %[H]
 \centering
 \includegraphics[width=.99\columnwidth]{cu/maxent}
 \caption{Performance of EMBERS vs a baserate model for surprising events.}
