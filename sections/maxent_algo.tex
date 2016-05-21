@@ -12,24 +12,24 @@
 
 \State Initialize $m_{i,j,k}=1 \forall i,j,k$
 \For {$c \in \{0,MAX\_ITERATIONS\}$}
-\For {$i,j,k \forall \textsc{<Event-Type, Population, Country>}$}
-\State $\hat{m}^{c+1} = {\hat{m}^c}_{ijk}*\frac{x_{ij+}}{{\hat{m}^c}_{ij+}} $
+\For {$ \text{all } <i,j,k>$}
+        \State $\hat{m}^{c+1} = {\hat{m}^c}_{ijk}*\frac{x_{ij+}}{{\hat{m}^c}_{ij+}} $
 
-\State $\hat{m}^{c+2} = {\hat{m}^{c+1}}_{ijk}*\frac{x_{i+k}}{{\hat{m}^c}_{i+k}} $
+        \State $\hat{m}^{c+2} = {\hat{m}^{c+1}}_{ijk}*\frac{x_{i+k}}{{\hat{m}^c}_{i+k}} $
 
-\State $\hat{m}^{c+3} = {\hat{m}^{c+2}}_{ijk}*\frac{x_{+jk}}{{\hat{m}^c}_{+jk}} $
+        \State $\hat{m}^{c+3} = {\hat{m}^{c+2}}_{ijk}*\frac{x_{+jk}}{{\hat{m}^c}_{+jk}} $
 
-\EndFor
+    \EndFor
 
 \If {$\hat{m}^c - \hat{m}^{c-1} < \tau$}
-
-\Return {$\hat{m}^c$}
+    pass
+    \State return {$\hat{m}^c$}
 
 \EndIf
 
 \EndFor
 
-\Return {$\hat{m}^c$}
+\State  return {$\hat{m}^c$}
 
 \EndProcedure
 
