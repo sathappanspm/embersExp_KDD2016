@@ -153,6 +153,7 @@ the actual events unfurled in the real world.
 between counts of GSR events and EMBERS alerts on a daily basis.}
 \label{fig:mexicoTimeline}
 \end{figure*}
+\vspace{-.2em}
 
 \subsubsection*{Colombia Protests (Dec 2014 to March 2015}
 Colombia witnessed two different significant protests during this period, one during late December 2014
@@ -171,14 +172,23 @@ February 11-12.
 %The increase in protest counts during Feb 2015 was
 %caused by a truckers' strike against fuel price increases.
 
+\vspace{-1em}
 \begin{figure} %[H]
 \centering
 \includegraphics[width=.8\columnwidth]{cu/colombiaDec15}
 \caption{Embers Performance during the Colombia Protests (Dec.2014 to Mar.2015)}
 \label{fig:colombiaDec14}
 \end{figure}
+\vspace{-1em}
 
 \subsubsection*{Paraguay Protests (February 2015)}
+\begin{figure} %[H]
+\centering
+\includegraphics[width=.8\columnwidth]{cu/paraguayFeb15}
+\caption{EMBERS performance during Paraguay Protests (Feb. 2015)}
+\label{fig:paraguay15}
+\end{figure}
+\vspace{-1em}
 The February 2015 protests in Paraguay were mainly carried out by peasants
 against the actions of the President Horacio Cartes.The protests were carried out after
 president Horacio's public revelation that he had opened two private swiss bank accounts.
@@ -188,13 +198,6 @@ against the introduction of the new public-private partnership law.
 
 EMBERS forecast the uptick in number of protest events in Paraguay during mid
 February 2015 as shown in Figure~\ref{fig:paraguay15}.
-
-\begin{figure} %[H]
-\centering
-\includegraphics[width=.8\columnwidth]{cu/paraguayFeb15}
-\caption{EMBERS performance during Paraguay Protests (Feb. 2015)}
-\label{fig:paraguay15}
-\end{figure}
 
 \subsection{EMBERS Misses}
 Next, we outline specific large-scale events that
@@ -227,7 +230,13 @@ was not sufficient and this affected the recall of one of the key models
 for Brazil, viz. the planned protest model.
 Since the planned protest model relies
 almost exclusively on the quality of information (specifically, date) extraction from text,
-its performance significantly deteriorated. This was subsequently corrected for the future.
+its performance significantly deteriorated.
+%Explanation for reviewer 1 comment:
+%"it is not clear how the planned protest model has been corrected"
+{\color{red} This was subsequently corrected for the future by adding
+more rules and correcting existing rules (which were translated from
+spanish) in heideltime for portuguese with help of language experts and
+extensive backtesting}.
 
 \begin{figure}
 \centering
