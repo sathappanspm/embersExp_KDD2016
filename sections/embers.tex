@@ -12,7 +12,7 @@ systems (systems that provide
 structured representations of ongoing events reported in newspapers), and focus on the former.
 Early forecasting systems such as ICEWS~\cite{icews} provided very broad coverage in countries but
 were limited by their spatio-temporal resolution (e.g., typically country- and month- level forecasting for
-specific events of interest~\cite{eoiprediction}). These events of interest are
+specific events of interest~\cite{eoiprediction}). The ICEWS events of interest are
 domestic political crises, international crises, ethnic/religious violence, insurgencies,
 and rebellion.
 A similar project in scope is PITF (Political Instability
@@ -58,11 +58,12 @@ Rather than design one model to integrate all possible data sources, EMBERS adop
 approach to forecasting. Each model utilized a specific (possibly overlapping) set of data sources
 and is tuned for high precision, so that the union of these models can be tuned for high recall.
 A fusion/suppression engine~\cite{andy-scotland-paper} allows a tunable
-strategy to issue more or less
+strategy to issue more or fewer
 alerts depending on whether the analyst's objective is to obtain a higher
-precision or recall. The underlying models used in EMBERS are: (i) planned protest model~\cite{pp-paper1},
-(ii) dynamic query expansion~\cite{dqe-plosone}, (iii) volume-based model~\cite{asonam},
-(iv) cascade regression~\cite{anil-plosone}, and (v) a baseline model. The planned protest model,
+precision or recall. The underlying models used in EMBERS are: (i)
+\textit{planned protest model}~\cite{pp-paper1},
+(ii) \textit{dynamic query expansion}~\cite{dqe-plosone}, (iii) \textit{volume-based model}~\cite{asonam},
+(iv) \textit{cascade regression}~\cite{anil-plosone}, and (v) a baseline model. The planned protest model,
 for news and social media (Twitter, Facebook), identifies explicit signs of organization and calls
 for protest, resolves relative mentions of time (e.g., `next Saturday') and space (e.g., `the square')
 to issue forecasts. The dynamic query expansion (DQE) model uses Twitter as a data source and learns time- and country-specific
