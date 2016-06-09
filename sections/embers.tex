@@ -53,7 +53,13 @@ methodology shown in Figure~\ref{fig:alert} each of the four fields
 are weighted uniformly and a total quality score out of 4 is
 obtained.  Apart from this each alert also has a lead-time associated with
 it calculated as shown in Figure~\ref{fig:leadtime}.
-
+\begin{figure}
+\includegraphics[width=\columnwidth]{figures/cu/timeline.pdf}
+\caption{Alert sent at time $t1$ predicting an event at time $t3$
+can be matched to a GSR event that happened at time $t2$ and reported
+at time $t4$ if $t1 < t4$.}
+\label{fig:leadtime}
+\end{figure}
 Rather than design one model to integrate all possible data sources, EMBERS adopted a multi-model
 approach to forecasting. Each model utilized a specific (possibly overlapping) set of data sources
 and is tuned for high precision, so that the union of these models can be tuned for high recall.
@@ -81,14 +87,6 @@ the selective superiorities of different data sources.  The cascade regression m
 aims to model activity related to organization and mobilization in Twitter~\cite{anil-plosone}.
 Finally, the baseline model uses a maximum likelihood
 estimation over the GSR to issue history-based forecasts.
-
-\begin{figure}
-\includegraphics[width=\columnwidth]{figures/cu/timeline.pdf}
-\caption{Alert sent at time $t1$ predicting an event at time $t3$
-can be matched to a GSR event that happened at time $t2$ and reported
-at time $t4$ if $t1 < t4$.}
-\label{fig:leadtime}
-\end{figure}
 
 The EMBERS project is unique not just in its algorithmic underpinnings but also in the use of new measures
 for evaluation, specifically aimed at determining forecasting performance. As

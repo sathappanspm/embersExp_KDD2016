@@ -123,6 +123,15 @@ Venezuelan student protests (Feb-Mar 2014).}
 
 \subsubsection*{Mexico protests (Oct 2014)}
 \label{sec:mexico}
+\begin{figure*}
+\centering
+\includegraphics[width=.8\textwidth]{cu/mx_timeline}
+\caption{Timeline of Mexico protests, showing the correspondence
+between counts of GSR events and EMBERS alerts on a daily basis.}
+\label{fig:mexicoTimeline}
+%\vspace{-1em}
+\end{figure*}
+
 Late September 2014, there were some peaceful protests by students from Ayotzinapa
 in Mexico against discriminatory hiring practices for teachers. During
 these protests,
@@ -140,21 +149,6 @@ EMBERS alerts for Mexico during this period. This figure provides a detailed
 comparison of the continuous stream of alerts produced by EMBERS during this period with how
 the actual events unfurled in the real world.
 
-\begin{figure} %[H]
-\centering
-\includegraphics[width=.8\columnwidth]{cu/mexicoOct14}
-\caption{EMBERS performance during Mexico protests (Oct 2014).}
-\label{fig:mexicoOct14}
-\end{figure}
-
-\begin{figure*}
-\centering
-\includegraphics[width=.8\textwidth]{cu/mx_timeline}
-\caption{Timeline of Mexico protests, showing the correspondence
-between counts of GSR events and EMBERS alerts on a daily basis.}
-\label{fig:mexicoTimeline}
-%\vspace{-1em}
-\end{figure*}
 %\vspace{-.2em}
 
 \subsubsection*{Colombia protests (Dec 2014 to March 2015}
@@ -309,6 +303,12 @@ as described in Section.~\ref{sec:mexico}. People turned out in huge numbers in 
 President Pena Nieto's ouster owing to the manner in which the case of the 43 missing students were handled.
 The protests were largely peaceful except for a few cases where vehicles were torched and windows and office equipment
 were broken.
+\begin{figure} %[H]
+\centering
+\includegraphics[width=.8\columnwidth]{cu/mexicoOct14}
+\caption{EMBERS performance during Mexico protests (Oct 2014).}
+\label{fig:mexicoOct14}
+\end{figure}
 
 EMBERS missed the huge single day spike on December 1st. Though having predicted a nationwide event for
 December 1, EMBERS failed to capture the individual cities where the protest were carried out and also was unable
@@ -334,6 +334,7 @@ the duration and details of it, we missed the onset of it. Say some more about i
 we should not have any excuse for. Point them to look at the limitations section.}
 \fi
 
+\input{sections/maxent_algo.tex}
 \section{Ablation Testing}
 \label{sec:ablation}
 Different data sources provide different value to
@@ -367,16 +368,13 @@ remove data sources and assess the differences in final alerts.
 The GSR contains a mix of everyday, mundane, protests as well as surprising events such as the Brazilian Spring.
 We aimed to ascertain the relative ease of forecasting each class of events
 with respect to a simple baserate model.
-
 The baserate model generates alerts using the rate of occurrence of events in the past three months.
-
 To define surprising events,
 we employed a maximum entropy approach. For this purpose, each event is assumed
 to be describable
 in terms of three dimensions: country, population and event type. The GSR can then be conceptualized
 as a cube. We infer a maximum entropy distribution conditioned on the marginals
 induced by the cube using iterative proportional fitting~\cite{bishop2007discrete}, as shown in Algorithm.~\ref{algo:maxent}.
-\input{sections/maxent_algo.tex}
 
 %\begin{enumerate}
 %\item Once the marginals are identified, elementary cells are replaced by 1; $\widehat{m}^{(0)}_{ijk}=1$
