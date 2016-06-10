@@ -18,7 +18,8 @@ and rebellion.
 A similar project in scope is PITF (Political Instability
 Task Force)~\cite{pitf} funded by the CIA.
 To the best of our knowledge, only EMBERS provides
-the most specific spatial resolution (city-level) and temporal resolution (daily-level) capability in forecasting.
+the most-specific spatial resolution (city-level) and the most-specific
+temporal resolution (daily-level) capability in forecasting.
 
 The software architecture of EMBERS (Early Model Based Event Recognition using
 Surrogates) is designed as a loosely coupled, share-nothing, highly distributed pipeline of
@@ -32,7 +33,7 @@ geocoding, and relative time phrase normalization.  After enrichment, the
 modeling stage feeds the enriched data into the various models that make up
 EMBERS.  Unlike other systems which use single monolithic models to make
 predictions, EMBERS combines the results of several different models to arrive
-at the most accurate forecasts.  Finally, in the selection stage the separate
+at the most accurate forecasts.  In particular, the separate
 alerts from each model are de-duplicated, fused, and selected and finally
 emitted as a full forecast for a real world event.
 
@@ -53,6 +54,7 @@ methodology shown in Figure~\ref{fig:alert} each of the four fields
 are weighted uniformly and a total quality score out of 4 is
 obtained.  Apart from this each alert also has a lead-time associated with
 it calculated as shown in Figure~\ref{fig:leadtime}.
+
 \begin{figure}
 \includegraphics[width=\columnwidth]{figures/cu/timeline.pdf}
 \caption{Alert sent at time $t1$ predicting an event at time $t3$
@@ -60,6 +62,7 @@ can be matched to a GSR event that happened at time $t2$ and reported
 at time $t4$ if $t1 < t4$.}
 \label{fig:leadtime}
 \end{figure}
+
 Rather than design one model to integrate all possible data sources, EMBERS adopted a multi-model
 approach to forecasting. Each model utilized a specific (possibly overlapping) set of data sources
 and is tuned for high precision, so that the union of these models can be tuned for high recall.
@@ -85,7 +88,7 @@ political event databases (ICEWS and GDELT~\cite{gdelt}), Tor~\cite{tor} statist
 exchange rates. It aims to provide a multi-source perspective into forecasting by leveraging
 the selective superiorities of different data sources.  The cascade regression model
 aims to model activity related to organization and mobilization in Twitter~\cite{anil-plosone}.
-Finally, the baseline model uses a maximum likelihood
+Finally, the baseline model uses maximum likelihood
 estimation over the GSR to issue history-based forecasts.
 
 The EMBERS project is unique not just in its algorithmic underpinnings but also in the use of new measures

@@ -71,22 +71,22 @@ engine provided the ability to balance this trade-off to meet IARPA OSI's object
 a baserate model each month in 2013.}
 \label{fig:perfect_score}
 \end{figure}
-Apart from comparing mean scores another interesting metric is to see
-how many perfect matches (4.0 quality score) are obtained by an
-algorithm.Figure~\ref{fig:perfect_score} shows the number of alerts issued
+Apart from comparing mean scores another interesting measure is to see
+how many perfect matches (4.0 quality score) are obtained by EMBERS.
+Fig.~\ref{fig:perfect_score} shows the number of alerts issued
 by EMBERS that matched perfectly to an event in the future on a monthly
-basis for 2013.  The figure clearly shows that EMBERS makes almost double
-the number of fully accurate forecasts as compared to the baserate
+basis for 2013.  It is clear that EMBERS makes almost double
+the number of fully accurate forecasts as compared to a baserate
 model.
 
 \subsection{Analyst Evaluation}
-In addition to the quantitative measures above, our experience interacting with analysts (across multiple
-branches of government) demonstrated
+In addition to the quantitative measures above, our experience interacting with analysts 
+demonstrated
 an interesting dichotomy as to how analysts use EMBERS alerts. Some analysts preferred to use EMBERS in an
 `analytic triage' scenario wherein they could tune EMBERS for high recall so that they would apply their
 traditional measures of filtering and analysis to hone in on forecasts of interest. Other analysts
 instead viewed EMBERS as a data source and preferred to use it in a high precision mode, e.g., wherein they
-were focused on a specific region of the world (e.g., Venezuela) and aimed to investigate a particular
+were focused on a specific region of the world (e.g., Venezuela) and/or aimed to investigate a particular
 social science hypothesis (e.g., whether disruptions in global oil markets led to civil unrest).
 
 To support these diverse classes of users, we implemented two
@@ -110,8 +110,9 @@ Second, we implemented an automated narrative generation capability
 (see Fig.~\ref{fig:narrative}) wherein EMBERS auto-generates a summary
 of the alert in English prose. As shown in Fig.~\ref{fig:narrative},
 a narrative comprises many parts drawn from different sources
-of information. One source is the named entities and the system uses
-`Wikification' to identify definitions and descriptions of these
+of information. One source constitutes the named entities wherein the
+system uses
+`Wikification' to identify definitions and descriptions of 
 named entities on Wikipedia. A second source is historical (or real-time)
 statistics of warning output and warning performance and situating the
 alert in this context. The third source pertains to inferred reasons for
