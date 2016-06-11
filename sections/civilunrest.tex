@@ -14,10 +14,11 @@ themselves from police teargas). These protests were
 sparked by an increase in public transport fares from $R\$3$
 to $R\$3.20$ by the government of President Dilma Rousseff.
 
-As shown in Figure~\ref{fig:brazilJune13} EMBERS, while missing the initial uptick,
-forecast the increase in the order-of-magnitude of protest events
+As shown in Fig.~\ref{fig:brazilJune13}, while missing the initial uptick,
+EMBERS did forecast the increase in the order-of-magnitude of protest events
 during the Brazilian Spring and also captured
-the spatial spread in the events, in addition to forecasting that this event
+the spatial spread in the events. In addition EMBERS correctly
+forecast that this event
 will span the broad Brazilian general population (as opposed to being confined to
 specific sectors).
 
@@ -32,14 +33,14 @@ more broader dissatisfaction to include wider issues such as
 government corruption, over-spending, and police brutality. The
 demonstrators also made calls for political reforms. In response, President
 Rousseff proposed a plebiscite on widespread political reforms in
-Brazil (but this was was later abandoned). Through its dynamic query expansion model,
+Brazil (but this was later abandoned). Through its dynamic query expansion model,
 EMBERS was able to capture such discussions on Twitter
-(see Figure~\ref{fig:brazilJune13_wordCloud}), and tracked their evolution as events
+(see Fig.~\ref{fig:brazilJune13_wordCloud}), and tracked their evolution as events
 unfolded through June.
 \begin{figure} %[H]
 \centering
 \includegraphics[width=.8\columnwidth]{cu/brazilJune13}
-\caption{EMBERS performance during the Brazilian Spring (June 2013.)}
+\caption{EMBERS performance during the Brazilian Spring (June 2013).}
 \label{fig:brazilJune13}
 \end{figure}
 
@@ -50,14 +51,14 @@ unfolded through June.
 \label{fig:brazilJune13_wordCloud}
 \end{figure}
 
-The protests intensified in late June (see Figure~\ref{fig:brazilJune13}), which were
+The protests intensified in late June (see Fig.~\ref{fig:brazilJune13}), which were
 forecast correctly by EMBERS, and these events
 also coincided with FIFA 2013 Confederation Cup matches. We believe this was an important factor in helping
 the protests gain momentum,
 as the events were covered by international media. A majority of protests
 occurred in the cities that were hosting FIFA soccer matches.
 EMBERS issued most of its alerts for these host cities (see
-Figure~\ref{fig:brazilJune13_map}), viz.
+Fig.~\ref{fig:brazilJune13_map}), viz.
 Rio de Janeiro, São Paulo,
 Belo Horizonte, Salvador, and Porto Alegre,
 among others. For example, on 27th June during the Confederations Cup
@@ -78,23 +79,27 @@ alerts for Brazil during June 2013.}
 \end{figure}
 
 \subsubsection*{Venezuelan protests (Feb-March 2014)}
-Early 2014 Venezuela started experiencing a situation of turmoil with a
+In early 2014 Venezuela began experiencing a situation of turmoil with a
 large portion of its population protesting due to insecurity, inflation
 and shortage of basic goods. This period saw one of the highest levels of
 civil disobedience in Venezuela with protests beginning in January with the murder
 of a former Miss Venezuela. However, the protests started gaining more importance
  and turned violent and more frequent with students joining the movement following an
-attempted rape of a student on campus in San Cristobal. EMBERS captured
-some of these first `calls to protest` at San Cristobal and its nearby surrounding areas
+attempted rape of a student on a campus in San Cristobal. EMBERS captured
+some of these first calls-to-protest at San Cristobal and its nearby surrounding areas
  and correctly forecast the population (Education) and that the protests would turn violent.
 A majority of the protesters were demanding that president Nicolas Maduro step down owing
-to the poor economic policies and widespread corruption. EMBERS was capable of capturing
+to the poor economic policies and widespread corruption. EMBERS succeeded
+in capturing
 that the reason behind the protests were mainly against government policies with corruption being
-a major theme.The EMBERS models working on twitter were also clearly able to identify some of major
-leaders involved in the protest such as the major opposition leader Leopoldo Lopez.
-Though the events mainly started off from San Cristobal it spread widely throughout the country, EMBERS
-captured this spillover very well as shown in Figure~\ref{fig:venezuelaMap}.
-Figure~\ref{fig:venezuelaMarch14}
+a major theme.
+The EMBERS models working on Twitter were also clearly able to identify some of the major
+leaders involved in the protest, such as the key
+opposition leader Leopoldo Lopez.
+Though the events mainly began in
+San Cristobal, they spread widely throughout the country; EMBERS
+captured this spread very well as shown in Fig.~\ref{fig:venezuelaMap}.
+Fig.~\ref{fig:venezuelaMarch14}
 shows how EMBERS closely forecast the spike in the number of events  during this period.
 %Over the next
 %days, EMBERS closely forecast the spike in the number of events as shown
@@ -108,7 +113,7 @@ shows how EMBERS closely forecast the spike in the number of events  during this
 \centering
 \includegraphics[width=.6\columnwidth]{cu/venezuelaMap}
 \caption{Geographical spread of protests (and forecasts) during
-Venezuelan student protests (Feb-Mar 2014).}
+the Venezuelan student protests (Feb-Mar 2014).}
 \label{fig:venezuelaMap}
 \end{figure}
 
@@ -131,38 +136,46 @@ between counts of GSR events and EMBERS alerts on a daily basis.}
 %\vspace{-1em}
 \end{figure*}
 
-Late September 2014, there were some peaceful protests by students from Ayotzinapa
+In September 2014, there were some peaceful protests by students from Ayotzinapa
 in Mexico against discriminatory hiring practices for teachers. During
 these protests,
-police opened fire on the students killing around three and about 43 went missing. This poor
+police opened fire on the students killing around three; 43 students
+went missing. This poor
 handling of the protest by the Mexican government caused widespread demonstrations throughout
-the country over the next few months in support of the families of the 43 missing students.
-A lot of these protests were violent in nature with demonstrators expressing extreme
-dissatisfaction against the government and president Pena Nieto. EMBERS, as
-shown in Figure~\ref{fig:mexicoOct14}
+the country over the next few months in support of the families of the 
+43 missing students.
+Many of these protests were violent in nature with demonstrators expressing extreme
+dissatisfaction against the government of president Pena Nieto. EMBERS, as
+shown in Fig.~\ref{fig:mexicoOct14}
 forecast an uptick in Mexico protests during early October 2014 with a lead time of about three days.
 It also generated  a series of alert spikes coinciding with the first
 large-scale nationwide protests between October 5th and 8th.
-Figure~\ref{fig:mexicoTimeline} provides a timeline of GSR events and
+Fig.~\ref{fig:mexicoTimeline} provides a timeline of GSR events and
 EMBERS alerts for Mexico during this period. This figure provides a detailed
-comparison of the continuous stream of alerts produced by EMBERS during this period with how
-the actual events unfurled in the real world.
+comparison of the continuous stream of alerts produced by EMBERS during this period against how
+the actual events unfolded in the real world.
 
 %\vspace{-.2em}
 
-\subsubsection*{Colombia protests (Dec 2014 to March 2015}
+\subsubsection*{Colombia protests (Dec 2014 to March 2015)}
 Colombia witnessed two different significant protests during this period, one during late December 2014
-and the other during February 2015. Towards the end of 2014 the Colombian government were on the process
+and the other during February 2015. Towards the end of 2014, the Colombian government was on the process
 of moving forward with peace negotiations to end 50 years of conflict with the Revolutionary Armed Forces
-of Colombia (FARC). With the FARC rebels having been associated with various acts of terror like extortion, armed conflict,
-kidnapping, ransom, illegal mining etc., for a long period, the people of Colombia gathered in huge numbers
- to protest against possible amnesty for the FARC rebels.EMBERS successfully forecast the uptick in the number of events during the
-middle of December 2014 as indicated in Figure~\ref{fig:colombiaDec14}. The figure also shows the increase in protest counts
-during February 2015 though in this case EMBERS over-predicted the counts. The protests in February 2015
-were mainly by led by truckers union demanding better freight rates, labor rights and against high fuel prices.
-The truckers extended for about a month and caused huge losses of about \$300
-million to the Colombian economy.
-EMBERS picked up on the truckers protests right from the beginning but was wrong in over estimating the numbers during
+of Colombia (FARC). With the FARC rebels having been associated with various acts of terror, e.g., extortion, armed conflict,
+kidnapping, ransom, and illegal mining, for a long period, the people of Colombia gathered in huge numbers
+ to protest against possible amnesty for the FARC rebels.
+EMBERS successfully forecast the uptick in the number of events during the
+middle of December 2014 as indicated in Fig.~\ref{fig:colombiaDec14}. 
+This figure also depicts the increase in protest counts
+during February 2015, although in this case EMBERS over-predicted the counts. 
+
+The protests in February 2015 were qualitatively different in nature and
+were led by truckers unions demanding better freight rates, labor rights, 
+and revolting against high fuel prices.
+The truckers protests extended for about a month and caused an
+estimated loss of about \$300 million to the Colombian economy.
+EMBERS forecast the truckers protests accurately at the onset of these
+events but over-estimated the number of protests during
 February 11-12.
 %The increase in protest counts during Feb 2015 was
 %caused by a truckers' strike against fuel price increases.
@@ -170,7 +183,7 @@ February 11-12.
 \begin{figure} %[H]
 \centering
 \includegraphics[width=.8\columnwidth]{cu/colombiaDec15}
-\caption{Embers Performance during the Colombia protests (Dec.2014 to Mar.2015)}
+\caption{EMBERS performance during the Colombia protests (Dec 2014 to Mar 2015).}
 \label{fig:colombiaDec14}
 \end{figure}
 
@@ -178,19 +191,21 @@ February 11-12.
 \begin{figure} %[H]
 \centering
 \includegraphics[width=.8\columnwidth]{cu/paraguayFeb15}
-\caption{EMBERS performance during Paraguay protests (Feb. 2015)}
+\caption{EMBERS performance during the Paraguay protests (Feb. 2015).}
 \label{fig:paraguay15}
 \end{figure}
 
 The February 2015 protests in Paraguay were mainly carried out by peasants
-against the actions of the President Horacio Cartes.The protests were carried out after
-president Horacio's public revelation that he had opened two private swiss bank accounts.
-The protests also had a historical significance. It was also being carried out as a tribute
+against the actions of President Horacio Cartes.
+The protests were carried out after
+president Horacio's public revelation that he had opened two private Swiss bank accounts.
+The protests also had a historical significance. They were 
+also being carried out as a tribute
 to peasant leaders and activists who were murdered. The peasants also protested
-against the introduction of the new public-private partnership law.
-
-EMBERS forecast the uptick in number of protest events in Paraguay during mid
-February 2015 as shown in Figure~\ref{fig:paraguay15}.
+against the introduction of a new public-private partnership law.
+EMBERS forecast the uptick in the
+number of Paraguay protests during mid
+February 2015 as shown in Fig.~\ref{fig:paraguay15}.
 
 
 %\begin{figure*}
@@ -249,31 +264,34 @@ reasons.
 \subsubsection{Brazilian protests (March 2015)}
 The beginning of 2015 saw a series of protests in Brazil demanding the
 removal of president Dilma Roussef amidst much furore against the increasing corruption in the country.
-The protest magnitude increased significantly due to the revelations that many politicians belonging
-to the ruling party accepted bribes from the state run energy company Petrobas. The protests saw huge participation from
+The number of protests
+increased significantly due to the revelations that many politicians belonging
+to the ruling party accepted bribes from the state-run energy company Petrobas. The protests drew huge participation from
 the general population, with protesters generally estimated to be around a
 million. EMBERS, as shown in Figure~\ref{fig:brazilSpring},
-picked up the onset of events but failed to capture the sudden rise in the number of events.
+picked up the onset of events but failed to capture the sudden rise 
+in the number of events.
 
 \begin{figure}
 \centering
 \includegraphics[width=.8\columnwidth]{cu/brazilMarch15}
-\caption{EMBERS performance during Brazil protests(Mar. 2015)}
+\caption{EMBERS performance during the Brazilian protests of March 2015.}
 \label{fig:brazilSpring}
 \end{figure}
 
 During this period there was a significant architectural change in the
-EMBERS processing pipeline. As mentioned in Section.~\ref{sec:background} the
-EMBERS system enrichment pipeline consists of the following: natural language processing,
-geocoding and relative time phrase normalization (temporal tagging). During early 2015
+EMBERS processing pipeline. As mentioned in Section~\ref{sec:background} the
+EMBERS system enrichment pipeline consists of the following steps: natural language processing,
+geocoding, and relative time phrase normalization (temporal tagging). During early 2015
 EMBERS had moved to the Heideltime~\cite{heideltime} temporal
-tagger from the previously used TIMEN~\cite{timen} temporal tagger due to
-Heideltime's support for more languages and an active development cycle as
-opposed to TIMEN.
+tagger versus the previously used TIMEN~\cite{timen} temporal tagger. (This
+choice was made because
+Heideltime supported more languages and an active development cycle.)
 Heideltime had no support for Portuguese (the primary
-language used in Brazil) and the EMBERS software development team had extended Heideltime to
+language of Brazil) and the EMBERS software development team had 
+extended Heideltime to
 support Portuguese by translating the underlying
-resources for Spanish to Portuguese. As we learnt subsequently,
+resources for Spanish to Portuguese. As it turns out,
 the simple translation of rules from Spanish to Portuguese
 was not sufficient and this affected the recall of one of the key models
 for Brazil, viz. the planned protest model.
@@ -282,23 +300,24 @@ almost exclusively on the quality of information (specifically, date) extraction
 its performance significantly deteriorated.
 %Explanation for reviewer 1 comment:
 %"it is not clear how the planned protest model has been corrected"
-{\color{red} This was subsequently corrected for the future by adding
+This was subsequently corrected for the future by adding
 more rules and correcting existing rules (which were translated from
-spanish) in heideltime for portuguese with help of language experts and
-extensive backtesting. Figure.\ref{fig:heideltime} shows an example
-detection before and after the changes}.
+Spanish) in Heideltime for Portuguese with the aid of language experts and
+extensive backtesting. Fig.~\ref{fig:heideltime} shows an example
+detection before and after the changes.
 
 \begin{figure}
   \centering
 \includegraphics[width=.7\columnwidth]{cu/heideltime}
-\caption{Example showing the improvement detection after changes to
-heideltime }
+\caption{Example depicting the improvement in time phrase
+recognition after changes to
+Heideltime.}
 \label{fig:heideltime}
 \end{figure}
 
-\subsubsection{\it Mexico protests (Dec 2014)}
-The December 2014 were a continuation of the series of protests that began in October 2014
-as described in Section.~\ref{sec:mexico}. People turned out in huge numbers in different cities of Mexico demanding
+\subsubsection{Mexico protests (Dec 2014)}
+The days of December 2014 witnessed a continuation of the series of protests that began in October 2014
+as described in Section~\ref{sec:mexico}. People turned out in huge numbers in different cities of Mexico demanding
 President Pena Nieto's ouster owing to the manner in which the case of the 43 missing students were handled.
 The protests were largely peaceful except for a few cases where vehicles were torched and windows and office equipment
 were broken.
@@ -310,13 +329,18 @@ were broken.
 \end{figure}
 
 EMBERS missed the huge single day spike on December 1st. Though having predicted a nationwide event for
-December 1, EMBERS failed to capture the individual cities where the protest were carried out and also was unable
-to pick the magnitude. On manual analysis of the event, it was found that the date, December 1,  was picked by the protesters due to
-its historical significance. This was the day when President Pena Nieto was sworn
-in as President in 2012 amidst much controversy and opposition from
+December 1, EMBERS failed to capture the individual cities where the 
+protests would take place out and thus was unable to forecast the number of
+events 
+accurately.
+On manual retrospective, it was found that the date, viz. December 1, 
+was picked by the protesters due to its historical significance. This was the day when President Pena Nieto was sworn
+in (in 2012) amidst much controversy and opposition from
 many specific constituent groups. The manual analysis also led to the understanding of how
-special dates were mentioned by twitterati {\bf \#1Dmx}. Dates mentioned like this were totally unrecognised by the EMBERS
-system and could have been one of the main reasons for EMBERS not being able to capture the peak on December 1st despite its
+special dates were mentioned by the twitterati {\bf \#1Dmx}. Dates 
+mentioned using such abbreviations 
+went unrecognized by the EMBERS
+system and was one of the main reasons for EMBERS not being able to capture the peak on December 1st despite its
 historical significance.
 
 \subsubsection{Brazilian Spring Onset}
