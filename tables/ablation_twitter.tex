@@ -15,8 +15,9 @@
 %\end{table}
 \begin{table}
 \small
-\caption{Comparison of performance metrics with and without social media sources. Social Media sources contributes a lot towards recall but loses out on
-lead-time.}
+\caption{Comparison of performance measures under ablation testing.
+Social media sources contribute toward recall but, due to their noisy
+nature, lower other measures of performance.}
 \label{tb:ablation_twitter}
 \vspace{-3mm}
 \resizebox{\columnwidth}{!}{
@@ -24,9 +25,9 @@ lead-time.}
 \hline
 Data Source          & Quality-Score & Lead-time & Precision & Recall \\
 \hline
-Social Media Sources & -16.48\% &-55\% &+35\% &-14\% \\
+Removing news and blogs & -16.48\% &-55\% &+35\% &-14\% \\
 \hline
-Non-Social Media Sources & +8.42\% & +30\%  &+79\% &-33\% \\
+Removing social media & +8.42\% & +30\%  &+79\% &-33\% \\
 \hline
 \end{tabular}
 }

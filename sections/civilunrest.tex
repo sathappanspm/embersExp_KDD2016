@@ -361,27 +361,28 @@ we should not have any excuse for. Point them to look at the limitations section
 \section{Ablation Testing}
 \label{sec:ablation}
 Different data sources provide different value to
-the forecasting enterprise. It is important we understand the
+the forecasting enterprise. It is important that we understand the
 value of a data source w.r.t. its forecasting potential.
-In this section we describe ablation testing in EMBERS where the value added to forecasting performance by traditional media
-sources like news and
-blogs are compared to that provided by the social media sources.
-Table~\ref{tb:ablation_twitter} shows the percentage difference in the performance metrics namely quality score, lead-time, precision and recall when only one
-kind of source (traditional media or social media) is used with respect to the performance metrics when compared against the scenario when
-both sources are used.
-The table clearly shows that social media sources are mainly necessary in achieving high recall but not that useful in achieving high
-lead times for which the traditional media sources are required. This
+In this section we describe ablation testing in EMBERS where the incremental
+value addition is evaluated for specific data sources. In particular,
+we are interested in determining the utility of using social
+media versus traditional media such as news and blogs.
+Table~\ref{tb:ablation_twitter} shows the percentage improvement
+or degradation in performance measures when specific sources
+are removed.
+It clearly shows that social media sources are mainly necessary in achieving high recall but are not that useful in achieving high
+lead times, for which traditional media sources are required. This
 behavior is expected as social media is where daily chatter
 occurs whereas signs of organization and calls for protest often
-happen on traditional meadia.
+happen over (or are reported in) traditional meadia.
 Mainly, Table~\ref{tb:ablation_twitter} makes it evident that to build a successful forecasting system we need a good mix
-of both traditional and social media sources.  Figure~\ref{fig:ablation} shows a snapshot of the EMBERS ablation visualizer. The visualizer provides an
+of both traditional and social media sources. Fig.~\ref{fig:ablation} shows a snapshot of the EMBERS ablation visualizer. The visualizer provides an
 analyst with the capability to selectively
 remove data sources and assess the differences in final alerts.
 
 \begin{figure}
 \includegraphics[width=\columnwidth]{figures/cu/ablation.pdf}
-\caption{EMBERS visualization on Ablation testing}
+\caption{EMBERS ablation visualizer.}
 \label{fig:ablation}
 \end{figure}
 \input{tables/ablation_twitter.tex}
@@ -395,9 +396,10 @@ The baserate model generates alerts using the rate of occurrence of events in th
 To define surprising events,
 we employed a maximum entropy approach. For this purpose, each event is assumed
 to be describable
-in terms of three dimensions: country, population and event type. The GSR can then be conceptualized
+in terms of three dimensions: country, population, and event type. The GSR can then be conceptualized
 as a cube. We infer a maximum entropy distribution conditioned on the marginals
-induced by the cube using iterative proportional fitting~\cite{bishop2007discrete}, as shown in Algorithm.~\ref{algo:maxent}.
+induced by the cube using iterative proportional fitting~\cite{bishop2007discrete}.
+%, as shown in Algorithm.~\ref{algo:maxent}.
 
 %\begin{enumerate}
 %\item Once the marginals are identified, elementary cells are replaced by 1; $\widehat{m}^{(0)}_{ijk}=1$
@@ -419,8 +421,9 @@ induced by the cube using iterative proportional fitting~\cite{bishop2007discret
 %\end{figure}
 
 Every month, events from the last three months of the
-GSR is used to populate the underlying cube of counts and the iterative proportional fitting procedure in Algorithm.~\ref{algo:maxent} is
-used to estimate the maxent values for each cell. The resultant sample counts are then scaled to
+GSR are used to populate the underlying cube of counts and the iterative proportional fitting procedure in Algorithm~\ref{algo:maxent} is
+used to estimate the expected counts
+for each cell. The resultant sample counts are then scaled to
 match the observed number of GSR events in the current month. The cell-wise difference between the inferred
 maxent distribution and the observed GSR is computed and all cells with significance greater than five standard
 deviations are classified as containing surprising events. In essence, this approach takes the GSR as input and
@@ -428,26 +431,33 @@ creates a truncated GSR against which we can evaluate EMBERS (and the baserate m
 
 \begin{table}
   \small
-\caption{Surprising events inferred by maxent analysis.}
+\caption{Surprising events identified by a maximum entropy analysis
+over the GSR.}
 \renewcommand{\arraystretch}{1.1}
 %\vspace{-3mm}
  \centering
  \begin{tabular}{|l|l|m{5cm}|}
  \hline
 May '13  &  Colombia	 &  Nationwide protests against administrative policy changes regarding the
-Youth in Action program and social security pension \\ \hline
-Jun '13  &  Brazil  &  Brazilian Spring \\ \hline
-Jul '13  &  Brazil  &  Brazilian Spring \\ \hline
-Sep '13  &  Mexico  &  Nationwide protests against education and energy reforms \\ \hline
-Oct '13  &  Mexico  &  Nationwide protests against education and energy reforms \\ \hline
-Oct '13  &  Uruguay  &  Nationwide protests demanding increase in minimum wage \\ \hline
-Feb '14  &  Venezuela	  &  Venezuelan student protests \\ \hline
-Mar '14  &  Venezuela  &  	Venezuelan student protests \\ \hline
-May '14  &  Brazil  &  Nationwide demonstrations in response to the 2014 FIFA World Cup and other social issues \\ \hline
-Jun '14  &  Brazil  &  Nationwide demonstrations in response to the 2014 FIFA World Cup and other social issues \\ \hline
-Aug '14  &  Argentina	  &  Nationwide protests against drops in wages, employment, and rising inflation \\ \hline
-Sep '14  &  Ecuador  &  Nationwide protests to demand changes in labor policies \\ \hline
-Oct '14  &  Mexico  &  Nationwide protests after the discovery of mass graves of kidnapped students  \\ \hline
+Youth in Action program and social security pension. \\ \hline
+Jun '13  &  Brazil  &  Brazilian Spring. \\ \hline
+Jul '13  &  Brazil  &  Brazilian Spring. \\ \hline
+Sep '13  &  Mexico  &  Nationwide protests against education and energy 
+reforms. \\ \hline
+Oct '13  &  Mexico  &  Nationwide protests against education and energy 
+reforms. \\ \hline
+Oct '13  &  Uruguay  &  Nationwide protests demanding increase in minimum 
+wage. \\ \hline
+Feb '14  &  Venezuela	  &  Venezuelan student protests. \\ \hline
+Mar '14  &  Venezuela  &  	Venezuelan student protests. \\ \hline
+May '14  &  Brazil  &  Nationwide demonstrations in response to the 
+2014 FIFA World Cup and other social issues. \\ \hline
+Jun '14  &  Brazil  &  Nationwide demonstrations in response to the 2014 FIFA World Cup and other social issues. \\ \hline
+Aug '14  &  Argentina	  &  Nationwide protests against drops in wages, employment, and rising inflation. \\ \hline
+Sep '14  &  Ecuador  &  Nationwide protests to demand changes in 
+labor policies. \\ \hline
+Oct '14  &  Mexico  &  Nationwide protests after the discovery of mass 
+graves of kidnapped students. \\ \hline
 \end{tabular}
 %\vspace{-5mm}
 \label{tab:maxentEvents}
@@ -457,7 +467,7 @@ In Table~\ref{tab:maxentEvents} we present several inferred events in Latin Amer
 filter.
 For all these events, we compare the recall of both EMBERS and baserate model
 in Figure~\ref{fig:maxent}.
-It is clear that EMBERS is able to forecast these significant upticks consistently.
+It is clear that EMBERS is able to forecast these significant upticks consistently and that the baserate model is not able to.
 
 \begin{figure} %[H]
 \centering
