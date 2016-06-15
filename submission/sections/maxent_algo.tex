@@ -1,0 +1,39 @@
+\begin{algorithm}
+\caption{Surprise GSR calculation}
+\begin{algorithmic}[1]
+
+\Procedure{SURPRISE-GSR}{}
+\State {\textbf{Input}: $\mathcal{G}= \{\mathcal{G}_{-1},\mathcal{G}_{-2}, \mathcal{G}_{-3}\}$}
+\State {\textbf{Output}: Maximum likelihood estimate for <event-type, population, country> tuple -- $\mathcal{\hat{M}}$}
+
+\State Each event in the GSR-$\mathcal{G}$ is mapped to a three dimensional vector of <event-type, population, country>. Each such vector
+       is mapped to a cell in a 3-D cube and the value $x_{ijk}$ for a cell in the cube represents the frequency of the vector <i, j, k>.
+       $m_{ijk}$ represents the maximum likelihood estimate for a given cell.
+
+\State Initialize $m_{i,j,k}=1 \forall i,j,k$
+\For {$c \in \{0,MAX\_ITERATIONS\}$}
+\For {$ \text{all } <i,j,k>$}
+        \State $\hat{m}^{c+1} = {\hat{m}^c}_{ijk}*\frac{x_{ij+}}{{\hat{m}^c}_{ij+}} $
+
+        \State $\hat{m}^{c+2} = {\hat{m}^{c+1}}_{ijk}*\frac{x_{i+k}}{{\hat{m}^c}_{i+k}} $
+
+        \State $\hat{m}^{c+3} = {\hat{m}^{c+2}}_{ijk}*\frac{x_{+jk}}{{\hat{m}^c}_{+jk}} $
+
+    \EndFor
+
+\If {$\hat{m}^c - \hat{m}^{c-1} < \tau$}
+    pass
+    \State return {$\hat{m}^c$}
+
+\EndIf
+
+\EndFor
+
+\State  return {$\hat{m}^c$}
+
+\EndProcedure
+
+\end{algorithmic}
+
+\label{algo:maxent}
+\end{algorithm}
